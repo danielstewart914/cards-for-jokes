@@ -1,0 +1,279 @@
+<mxfile host="65bd71144e">
+    <diagram id="yqnl9jbmedfVrZMtxqGm" name="Start Page">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="223" y="120" width="405" height="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="START BUTTON" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="350" width="145" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="kxgtWzfwq78ZmJUp4hhp-4" value="High Card Game" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="200" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-5" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="y0DwTbANvrOQKZsvN6_f-4" target="kxgtWzfwq78ZmJUp4hhp-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-4" value="POP UP - Input User Name / Select Deck Theme" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="70" width="320" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-6" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="190" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-7" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="190" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-8" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="407.5" y="190" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-9" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="190" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y0DwTbANvrOQKZsvN6_f-10" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#2A1F01;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="190" width="50" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="UzzeXi4AYCnUfT8e2pIp" name="Deck Page">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="pWMgHMB8082qwLYnmPIf-0"/>
+                <mxCell id="pWMgHMB8082qwLYnmPIf-1" parent="pWMgHMB8082qwLYnmPIf-0"/>
+                <mxCell id="v6dsh3vfZ4sGUssDUhhT-3" value="Instruction (Click Deck to Draw" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry x="315" y="450" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="u6X3IQ2C-RME6czvMD-i-0" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="yJ-33DEZEprCW5WvIvlv-0" value="Hello User Name!" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry x="260" y="70" width="270" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="PUwnnvVC6TDNwmbm-pvY-0" value="OUTLINE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry x="60" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="PUwnnvVC6TDNwmbm-pvY-1" value="OUTLINE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry x="520" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="v6dsh3vfZ4sGUssDUhhT-2" value="BACK OF DECK WITH USER THEME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="pWMgHMB8082qwLYnmPIf-1">
+                    <mxGeometry x="290" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="p5cH1P69aIY7lh2CxukX" name="Game Page">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="UFLdtyZxRlXUSPPdtUYP-0"/>
+                <mxCell id="UFLdtyZxRlXUSPPdtUYP-1" parent="UFLdtyZxRlXUSPPdtUYP-0"/>
+                <mxCell id="d-WDJF4b-Z6HBNScFMW7-0" value="USER CARD" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="60" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="d-WDJF4b-Z6HBNScFMW7-1" value="COMPUTER CARD" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="520" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="fvR56TlaeW45UjqUcMPc-0" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="hIFmvhvCfR8wepMEguNQ-0" value="IF USER LOSES - POP UP MODAL: COMPUTER WINS" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="270" y="450" width="260" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="jitSESg4phqTcn6KGDfv-0" value="BACK of DECK IMAGE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="290" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="d-WDJF4b-Z6HBNScFMW7-2" value="POP UP MODAL -- YOU WIN + JOKE&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="260" y="220" width="280" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="jitSESg4phqTcn6KGDfv-1" value="QUIT BUTTON" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="720" y="620" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0M7e4DK_KoyMjPnTW_li-0" value="SAVE JOKE&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="320" y="320" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="0M7e4DK_KoyMjPnTW_li-1" value="CLOSE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="430" y="320" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="0M7e4DK_KoyMjPnTW_li-4" value="" style="edgeStyle=none;html=1;" edge="1" parent="UFLdtyZxRlXUSPPdtUYP-1" source="0M7e4DK_KoyMjPnTW_li-2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="565" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="0M7e4DK_KoyMjPnTW_li-2" value="Continue" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="UFLdtyZxRlXUSPPdtUYP-1">
+                    <mxGeometry x="350" y="550" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Continue Game Page" id="xVYTmYUlbwU7zlJUJJva">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="PKIwkQOfAZi--ApLYKJq-0"/>
+                <mxCell id="PKIwkQOfAZi--ApLYKJq-1" parent="PKIwkQOfAZi--ApLYKJq-0"/>
+                <mxCell id="PKIwkQOfAZi--ApLYKJq-2" value="BACK of DECK IMAGE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="PKIwkQOfAZi--ApLYKJq-1">
+                    <mxGeometry x="290" y="160" width="220" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="PKIwkQOfAZi--ApLYKJq-3" value="Instruction (Click Deck to Draw" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="PKIwkQOfAZi--ApLYKJq-1">
+                    <mxGeometry x="315" y="450" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="PKIwkQOfAZi--ApLYKJq-4" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="PKIwkQOfAZi--ApLYKJq-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="Lolx3EiXrzPF2XAQkY8l" name="End Of Deck">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="3C8FR79aUhuCoKItBJne-0"/>
+                <mxCell id="3C8FR79aUhuCoKItBJne-1" parent="3C8FR79aUhuCoKItBJne-0"/>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-1" value="FINAL SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry x="320" y="250" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-2" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-3" value="GAME OVER&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry x="235" y="120" width="330" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-4" value="ALL TIME HIGH SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry x="320" y="340" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-5" value="PLAY AGAIN?" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry x="320" y="520" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="T2ZfOeCIEXMY-jTxP-ne-6" value="THIS GAMES JOKES" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="3C8FR79aUhuCoKItBJne-1">
+                    <mxGeometry x="320" y="430" width="160" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="vkSqupVkCrfMUXWwoT2I" name="High Score Page">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="Nx-RHqL8GdiR5NmhSTgM-0"/>
+                <mxCell id="Nx-RHqL8GdiR5NmhSTgM-1" parent="Nx-RHqL8GdiR5NmhSTgM-0"/>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-0" value="My High Scores" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="80" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-1" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="160" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-2" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="160" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-3" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="190" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-4" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="190" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-5" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="220" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-6" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="220" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-7" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="250" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-8" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="250" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-9" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="280" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="533VGPMNZW3OwTtXPOSV-10" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="280" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-0" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-1" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="310" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-2" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="310" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-3" value="SCORE" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="310" y="340" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-4" value="DATE / TIME" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="430" y="340" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="IBYVmPwJTXI5crCZapFs-5" value="BACK BUTTON" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="Nx-RHqL8GdiR5NmhSTgM-1">
+                    <mxGeometry x="355" y="380" width="115" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="wq7ZA-4jS-7wlxEjOpMy" name="My Jokes">
+        <mxGraphModel dx="888" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="nhIBfZoUgYp9HH7-94mH-0"/>
+                <mxCell id="nhIBfZoUgYp9HH7-94mH-1" parent="nhIBfZoUgYp9HH7-94mH-0"/>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-0" value="MY JOKES" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="310" y="90" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-11" value="(Permenant Nav Bar) -- CARDS FOR JOKES -- View High Score Link -- My Jokes Link -- Date / Time&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-17" value="JOKE&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="90" y="160" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-18" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="260" y="160" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-19" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="430" y="160" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-20" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="600" y="160" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-21" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="90" y="270" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-22" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="260" y="270" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-23" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="430" y="270" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-24" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="600" y="270" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-25" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="90" y="380" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-26" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="260" y="380" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-27" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="430" y="380" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-28" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="600" y="380" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-29" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="90" y="490" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-30" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="260" y="490" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-31" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="430" y="490" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="ki2JFgjy2xUKcm9BTBVx-32" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="600" y="490" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="gx5A9Bb2CQm9ulK1KHZv-0" value="BACK BUTTON" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#2A1F01;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="nhIBfZoUgYp9HH7-94mH-1">
+                    <mxGeometry x="368" y="600" width="115" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
