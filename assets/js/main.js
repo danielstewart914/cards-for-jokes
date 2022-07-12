@@ -7,6 +7,10 @@ $(document).ready(function(){
     $('.modal').modal();
   });
 
+$(document).ready(function () {
+$(".sidenav").sidenav();
+});
+
 
 //  shuffle deck
 async function shuffleDeck ( id ) {
