@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
+    background-image: linear-gradient(-140deg, #1b5e20, #4caf50);
+}
+.games {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    height: 30rem;
+    width: 20rem;
+    margin: 2rem;
+    color: black;
+}
+
+.card-name{
+    font-weight: 800;
+    background-color: #444444cc;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+}
+
+.card-row {
+    padding: 1rem 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 150%;
+    left: -25%;
+}
+
+.card-row > img {
+    height: 3.5rem;
+    margin: 0.5rem;
+}
+
+.card:hover, .card:focus {
+    background-color: transparent;
+    color: white;
+}
+
+@media ( hover ) {
+    .card-overlay {
+        background-color: #ffffff66;
+        background-blend-mode: overlay;
+    }
+}

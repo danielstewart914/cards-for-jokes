@@ -10,29 +10,23 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <!-- jquery -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    /> -->
     <!--Materialize CSS Framework-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <!-- css link -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
     <title>Cards for Jokes</title>
   </head>
   <body class="flow-text">
     <!-- navbar  -->
-    <nav class="nav-wrapper red darken-2">
+    <nav class="nav-wrapper grey darken-3 white-text">
       <div class="container">
         <a href="#" class="brand-logo">Cards for Jokes</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
@@ -51,27 +45,29 @@
       <li><a href="#">High Scores</a></li>
       <li><a href="#">Jokes</a></li>
     </ul>
-
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable center">
-            <div class="card-image">
-              <img src="./img/joker-card.png" />
-            </div>
-            <div class="card-content">
-            <span class="card-title">High Card Wins</span>
-          </div>
-          <button class="btn waves-effect waves-light center">Start Game</button>
-          </div>
+    <main>
+      <div class="games container">
+        <div class="center-align">
+          <a class="waves-effect waves-light modal-trigger card card-back card-overlay z-depth-3" href="#modal1">
+            <h4 class="card-name">High Card Wins</h4>
+          </a>
+          <a class="waves-effect waves-light green darken-4 btn-large modal-trigger z-depth-3" href="#modal1">Start Game</a>
+        </div>
+        <div class="center-align">
+          <a class="waves-effect waves-light modal-trigger card card-back card-overlay z-depth-3" href="#modal1">
+            <h4 class="card-name">Black Jack</h4>
+          </a>
+          <a class="waves-effect waves-light green darken-4 btn-large modal-trigger z-depth-3" href="#modal1">Start Game</a>
+        </div>
+        <div class="center-align">
+          <a class="waves-effect waves-light modal-trigger card card-back card-overlay z-depth-3" href="#modal1">
+            <h4 class="card-name">Solitaire</h4>
+          </a>
+          <a class="waves-effect waves-light green darken-4 btn-large modal-trigger z-depth-3" href="#modal1">Start Game</a>
         </div>
       </div>
-    </div>
-
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1"
-      >Modal</a
-    >
+      <div class="card-row" id="bottomCardRow"></div>
+    </main>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -86,16 +82,23 @@
       </div>
     </div>
 
+    <div id="deckTheme" class="modal black">
+      <div class="modal-content">
+        <h4 class="grey darken-3 modal-header white-text center-align m-0">Please select your theme</h4>
+        <div class="green darken-3 m-0 p-2">
+          <div class="card-selection">&nbsp;</div>
+          <div class="card-selection">&nbsp;</div>
+          <div class="card-selection">&nbsp;</div>
+          <div class="card-selection">&nbsp;</div>
+          <div class="card-selection">&nbsp;</div>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
+      </div>
+    </div>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
-      });
-    </script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
