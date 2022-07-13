@@ -8,13 +8,14 @@ $(document).ready(function(){
   });
 
 $(document).ready(function () {
-$(".sidenav").sidenav();
+  $(".sidenav").sidenav();
 });
 
 // get new deck
 async function getNewDeck( deckCount ) {
 
   const response = await fetch(`${deckOfCardApiRootUrl}/new/shuffle/?deck_count=${deckCount}`);
+
   if (response.ok) {
 
     return response.json();
@@ -33,7 +34,8 @@ async function getNewDeck( deckCount ) {
 // shuffle deck
 async function shuffleDeck ( id, onlyRemaining ) {
 
-    const response = await fetch(`${deckOfCardApiRootUrl}/${id}/shuffle/?remaining=${onlyRemaining}`);
+  const response = await fetch(`${deckOfCardApiRootUrl}/${id}/shuffle/?remaining=${onlyRemaining}`);
+
   if (response.ok) {
 
     return response.json();
@@ -51,7 +53,8 @@ async function shuffleDeck ( id, onlyRemaining ) {
 // draw card  
 async function drawCard( numberOfCards ) {
 
-    const response = await fetch(`${deckOfCardApiRootUrl}/${deckId}/draw/?count=${numberOfCards}`);
+  const response = await fetch(`${deckOfCardApiRootUrl}/${deckId}/draw/?count=${numberOfCards}`);
+
   if (response.ok) {
 
     return response.json();
