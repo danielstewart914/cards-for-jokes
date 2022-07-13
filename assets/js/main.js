@@ -1,11 +1,31 @@
 var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
-var deckId = '0m34q6ubwk4g';
+var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
+
+function initialize () {
+
+  if( !deckId ) {
+
+    getNewDeck( 1 )
+    .then ( function (  data ) {
+
+      deckId = data.deck_id;
+      localStorage.setItem( 'deck_id', JSON.stringify( deckId ) );
+
+      return data.success;
+
+    } );
+
+  }
+
+  renderBottomRow();
+
+}
 
 // initialize modal
 $(document).ready(function(){
-    $('.modal').modal();
-  });
+  $('.modal').modal();
+});
 
 $(document).ready(function () {
   $(".sidenav").sidenav();
@@ -96,4 +116,4 @@ function renderBottomRow () {
 
 }
 
-renderBottomRow();
+initialize();
