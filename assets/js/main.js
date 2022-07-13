@@ -2,6 +2,8 @@ var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 
+
+// initialize data
 function initialize () {
 
   if( !deckId ) {
@@ -11,8 +13,6 @@ function initialize () {
 
       deckId = data.deck_id;
       localStorage.setItem( 'deck_id', JSON.stringify( deckId ) );
-
-      return data.success;
 
     } );
 
@@ -27,6 +27,7 @@ $(document).ready(function(){
   $('.modal').modal();
 });
 
+// initialize sidenav
 $(document).ready(function () {
   $(".sidenav").sidenav();
 });
@@ -34,17 +35,15 @@ $(document).ready(function () {
 // get new deck
 async function getNewDeck( deckCount ) {
 
-  const response = await fetch(`${deckOfCardApiRootUrl}/new/shuffle/?deck_count=${deckCount}`);
+  const response = await fetch(`${ deckOfCardApiRootUrl }/new/shuffle/?deck_count=${ deckCount }`);
 
   if (response.ok) {
 
     return response.json();
 
-  }
+  } else {
 
-  else {
-
-    console.error('Error: ' + response.statusText);
+    console.error( 'Error: ' + response.statusText );
 
   } 
 
@@ -54,36 +53,32 @@ async function getNewDeck( deckCount ) {
 // shuffle deck
 async function shuffleDeck ( id, onlyRemaining ) {
 
-  const response = await fetch(`${deckOfCardApiRootUrl}/${id}/shuffle/?remaining=${onlyRemaining}`);
+  const response = await fetch( `${ deckOfCardApiRootUrl }/${ id }/shuffle/?remaining=${ onlyRemaining }` );
 
-  if (response.ok) {
+  if ( response.ok ) {
 
     return response.json();
 
-  }
+  } else {
 
-  else {
-
-    console.error('Error: ' + response.statusText);
+    console.error( 'Error: ' + response.statusText );
 
   } 
     
     }
 
-// draw card  
+// draw card(s) 
 async function drawCard( numberOfCards ) {
 
-  const response = await fetch(`${deckOfCardApiRootUrl}/${deckId}/draw/?count=${numberOfCards}`);
+  const response = await fetch( `${ deckOfCardApiRootUrl }/${ deckId }/draw/?count=${ numberOfCards }` );
 
-  if (response.ok) {
+  if ( response.ok ) {
 
     return response.json();
 
-  }
+  } else {
 
-  else {
-
-    console.error('Error: ' + response.statusText);
+    console.error( 'Error: ' + response.statusText );
 
   }
 
@@ -93,26 +88,30 @@ async function drawCard( numberOfCards ) {
 // render bottom row of cards on main screen
 function renderBottomRow () {
 
-    shuffleDeck( deckId, false )
-        .then ( function () {
+  // first shuffle deck
+  shuffleDeck( deckId, false )
+    .then ( function () {
 
-        drawCard( 52 )
-            .then ( function ( data ) {
+    // draw all cards
+    drawCard( 52 )
+    .then ( function ( data ) {
 
-            var rowFrag = $( document.createDocumentFragment() );
+      var rowFrag = $( document.createDocumentFragment() );
 
-            for( var i = 0; i < data.cards.length; i++ ) {
+      // render cards to fragment
+      for( var i = 0; i < data.cards.length; i++ ) {
 
-                var cardImageEl = $( '<img>' ).attr( 'src', data.cards[i].image );
-                rowFrag.append( cardImageEl );
-        
-            }
+          var cardImageEl = $( '<img>' ).attr( 'src', data.cards[i].image );
+          rowFrag.append( cardImageEl );
+  
+      }
 
-            bottomCardRowEl.html( rowFrag );
+      // set contents of with bottom row element with fragment
+      bottomCardRowEl.html( rowFrag );
 
-            })
+    } )
 
-        })
+  } );
 
 }
 
