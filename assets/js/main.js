@@ -11,11 +11,32 @@ $(document).ready(function () {
 $(".sidenav").sidenav();
 });
 
+// get new deck
+async function getNewDeck( deckCount ) {
 
-//  shuffle deck
-async function shuffleDeck ( id ) {
+  return fetch ( `${ deckOfCardApiRootUrl }/new/shuffle/?deck_count=${ deckCount }` )
+  .then ( function ( response ) {
+    if ( response.ok ) {
 
-    return fetch ( `${ deckOfCardApiRootUrl }/${ id }/shuffle/` )
+      return response.json();
+
+    }
+
+    else {
+
+      console.error( 'Error: ' + response.statusText );
+
+    }
+
+  } ) 
+
+}
+
+
+// shuffle deck
+async function shuffleDeck ( id, onlyRemaining ) {
+
+    return fetch ( `${ deckOfCardApiRootUrl }/${ id }/shuffle/?remaining=${ onlyRemaining }` )
       .then ( function ( response ) {
         if ( response.ok ) {
     
@@ -56,10 +77,10 @@ async function drawCard( numberOfCards ) {
 
 }
 
-// render bottom row of cards  
-function renderRow () {
+// render bottom row of cards on main screen
+function renderBottomRow () {
 
-    shuffleDeck( deckId )
+    shuffleDeck( deckId, false )
         .then ( function () {
 
         drawCard( 52 )
@@ -82,4 +103,4 @@ function renderRow () {
 
 }
 
-renderRow();
+renderBottomRow();
