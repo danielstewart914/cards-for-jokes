@@ -14,21 +14,18 @@ $(".sidenav").sidenav();
 // get new deck
 async function getNewDeck( deckCount ) {
 
-  return fetch ( `${ deckOfCardApiRootUrl }/new/shuffle/?deck_count=${ deckCount }` )
-  .then ( function ( response ) {
-    if ( response.ok ) {
+  const response = await fetch(`${deckOfCardApiRootUrl}/new/shuffle/?deck_count=${deckCount}`);
+  if (response.ok) {
 
-      return response.json();
+    return response.json();
 
-    }
+  }
 
-    else {
+  else {
 
-      console.error( 'Error: ' + response.statusText );
+    console.error('Error: ' + response.statusText);
 
-    }
-
-  } ) 
+  } 
 
 }
 
@@ -36,43 +33,36 @@ async function getNewDeck( deckCount ) {
 // shuffle deck
 async function shuffleDeck ( id, onlyRemaining ) {
 
-    return fetch ( `${ deckOfCardApiRootUrl }/${ id }/shuffle/?remaining=${ onlyRemaining }` )
-      .then ( function ( response ) {
-        if ( response.ok ) {
-    
-          return response.json();
-    
-        }
-    
-        else {
-    
-          console.error( 'Error: ' + response.statusText );
-    
-        }
-    
-      } ) 
+    const response = await fetch(`${deckOfCardApiRootUrl}/${id}/shuffle/?remaining=${onlyRemaining}`);
+  if (response.ok) {
+
+    return response.json();
+
+  }
+
+  else {
+
+    console.error('Error: ' + response.statusText);
+
+  } 
     
     }
 
 // draw card  
 async function drawCard( numberOfCards ) {
 
-    return fetch ( `${ deckOfCardApiRootUrl }/${ deckId }/draw/?count=${ numberOfCards }` )
-    .then ( function ( response ) {
+    const response = await fetch(`${deckOfCardApiRootUrl}/${deckId}/draw/?count=${numberOfCards}`);
+  if (response.ok) {
 
-        if ( response.ok ) {
+    return response.json();
 
-        return response.json();
-    
-        }
-    
-        else {
-    
-        console.error( 'Error: ' + response.statusText );
-    
-        }
+  }
 
-    } )
+  else {
+
+    console.error('Error: ' + response.statusText);
+
+  }
 
 
 }
