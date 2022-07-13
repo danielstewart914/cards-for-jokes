@@ -14,11 +14,15 @@ function initialize () {
       deckId = data.deck_id;
       localStorage.setItem( 'deck_id', JSON.stringify( deckId ) );
 
+      renderBottomRow();
+
     } );
 
-  }
+  } else {
 
-  renderBottomRow();
+    renderBottomRow();
+
+  }
 
 }
 
