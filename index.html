@@ -40,7 +40,6 @@
           </ul>
       </div>
     </nav>
-
     <!-- Side nav trigger for small screens -->
     <ul class="sidenav lime darken-2 center-align white-text" id="mobile-links">
         <li><a href="index.html"><i class="material-icons left white-text">home</i></a></li>
@@ -49,11 +48,12 @@
     </ul>
     <main>
       <div class="games container">
+    <!-- Game Choices -->
 
-    <!-- Game Choice -->
+        <!-- High Card Wins -->
         <div class="center-align gameTile">
-          <a data-target="modal1" class="modal-trigger game-card card-back card-overlay z-depth-3" href="#">
-            <h5 data-target="modal1" class="modal-trigger card name orange accent-4">High Card</h5>
+          <a id="highCardGame" class="game-heading game-card card-back card-overlay z-depth-3" href="">
+            <h5 class="game-heading card name orange accent-4">High Card</h5>
           </a>
           <details>
             <summary class="brown darken-4 white-text">Rules</summary>
@@ -68,9 +68,11 @@
             </ul>
           </details>
         </div>
-        <div class="center-align gameTile">
-          <a data-target="modal1" class="modal-trigger game-card card-back card-overlay z-depth-3" href="#">
-            <h5 data-target="modal1" class="modal-trigger card name orange accent-4">War</h5>
+
+        <!-- War -->
+        <div class="center-align gameTile hidden">
+          <a data-target="modal1" class="game-heading game-card card-back card-overlay z-depth-3" href="#">
+            <h5 data-target="modal1" class="game-heading card name orange accent-4">War</h5>
           </a>
           <details>
             <summary class="brown darken-4 white-text">Rules</summary>
@@ -85,9 +87,11 @@
             </ul>
           </details>
         </div>
-        <div class="center-align gameTile">
-          <a data-target="modal1" class="modal-trigger game-card card-back card-overlay z-depth-3" href="#">
-            <h5 data-target="modal1" class="modal-trigger card name orange accent-4">Black Jack</h5>
+
+        <!-- Black Jack -->
+        <div class="center-align gameTile hidden">
+          <a data-target="modal1" class="game-heading game-card card-back card-overlay z-depth-3" href="#">
+            <h5 data-target="modal1" class="game-heading card name orange accent-4">Black Jack</h5>
           </a>
           <details>
             <summary class="brown darken-4 white-text">Rules</summary>
@@ -102,9 +106,11 @@
             </ul>
           </details>
         </div>
-        <div class="center-align gameTile">
-          <a data-target="modal1" class="modal-trigger game-card card-back card-overlay z-depth-3" href="#">
-            <h5 data-target="modal1" class="modal-trigger card name orange accent-4">Solitaire</h5>
+
+        <!-- Solitaire -->
+        <div class="center-align gameTile hidden">
+          <a data-target="modal1" class="game-heading game-card card-back card-overlay z-depth-3" href="#">
+            <h5 data-target="modal1" class="game-heading card name orange accent-4">Solitaire</h5>
           </a>
           <details>
             <summary class="brown darken-4 white-text">Rules</summary>
@@ -124,26 +130,27 @@
     </main>
 
      <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="user-modal" class="modal">
     <div class="modal-content center-align">
         <div class="form-group">
             <h6>Who is playing?</h6>
-            <input type="text" id="username" class="form-control" placeholder="Enter your name here"
+            <input type="text" id="username-entry" class="form-control" placeholder="Enter your name here"
               required />
           </div>
       <h6>Pick your theme:</h6>
     </div>
    <div class="row">
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
+        <div class="theme"><img data-theme="0" class="deck" src="https://deckofcardsapi.com/static/img/back.png"></div>
+        <div class="theme"><img data-theme="1" class="deck" src="./assets/images/batman-card-theme.jpeg"></div>
+        <div class="theme"><img data-theme="2" class="deck" src="./assets/images/awkward-turtle-card-theme.jpg"></div>
+        <div class="theme"><img data-theme="3" class="deck" src="./assets/images/mountain-deck-theme.jpg"></div>
+        <div class="theme"><img data-theme="4" class="deck" src="./assets/images/humming-bird-deck-theme.jpg"></div>
+        <div class="theme"><img data-theme="4" class="deck" src="https://deckofcardsapi.com/static/img/back.png"></div>
     </div>
     <div class="modal-footer orange accent-4">
-      <h5 href="#" class="modal-close waves-effect waves-light btn">PLAY GAME</h5>
+      <span id="name-entry-error"></span>
+      <button id="play-game" class="waves-effect waves-light btn brown darken-4 white-text">PLAY GAME</button>
     </div>
-  </div>
   </div>
 
     <!-- jquery -->
