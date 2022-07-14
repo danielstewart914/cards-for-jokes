@@ -7,7 +7,7 @@ body {
     flex-flow: column;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-image: url(../images/winter.avif);
+    background-image: url(../images/background.jpg);
     background-attachment: fixed;
 }   
 
@@ -26,10 +26,11 @@ main {
 nav {
     display: flex;
     position: fixed;
+    background-color: #4D581E;
     z-index: 4;
-    height: 4.4rem;
+    height: 6rem;
     font-family:'Poppins', sans-serif;
-    border-bottom: black solid 1px;
+    border-bottom: black solid 2px;
 }
 
 .sidenav {
@@ -50,7 +51,7 @@ nav {
     padding: 3rem;
     height: 100vh;
     width: 100vw;
-    margin-top: 2rem;
+    margin-top: 0rem;
 }
 
 .game-card {
@@ -62,14 +63,14 @@ nav {
     aspect-ratio: 2 / 3;
     width: 10rem;
     margin: 1rem;
-    margin-bottom: 3.3rem;
+    margin-bottom: 1.5rem;
     color: black;
     z-index: 1;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .game-card:hover {
-    transform: scale(1.25);
+    transform: scale(1.05);
     opacity: 1;
    
 }
@@ -109,8 +110,8 @@ nav {
 
 summary {
     border: black solid 1px;
-    opacity: 0.8;
-    margin: 7px;
+    opacity: 0.9;
+    margin: 1rem;
 }
 
 #modal1 {
@@ -135,9 +136,10 @@ summary {
 #rulesBox {
     display: flex;
     border: black solid 1px;
-    opacity: 0.8;
+    opacity: 0.7;
     align-content: center;
     justify-content: center;
+    margin: 1rem;
 }
 
 #myJokes {
@@ -148,4 +150,28 @@ summary {
 #jokeBox {
     border: solid black 1px;
     width: 22rem;
+}
+
+#bottomCardRow {
+    border: black 2px solid;
+    background-color: #8E7044;
+    z-index: 4;
+}
+
+.userDeck {
+    opacity: 1;
+}
+
+.gameBox {
+    opacity: 1;
+    border: solid white 6px;
+    background-image:url(../images/fleur.jpeg);
+}
+
+.gameBox:hover {
+    transform: scale(1);
+}
+
+.userDeck:hover {
+    transform: scale(1);
 }

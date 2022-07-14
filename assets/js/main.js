@@ -153,7 +153,6 @@ async function drawCard( numberOfCards ) {
 
   }
 
-
 }
 
 // render bottom row of cards on main screen
