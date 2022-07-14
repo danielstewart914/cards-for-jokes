@@ -6,13 +6,14 @@ var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 var userName = JSON.parse( localStorage.getItem( 'user_name' ) );
 var themeIndex = JSON.parse( localStorage.getItem( 'deck_theme' ) );
 
-const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg' ];
+const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', '', '', '' ];
 
 // index.html elements
 var highCardGameEl = $( '#highCardGame' );
 var userModal = $( '#user-modal' );
 var playGameElButton = $( '#play-game' );
 var usernameEntryEl = $( '#username-entry' );
+var nameEntryErrorEl = $( '#name-entry-error' );
 
 // initialize data
 function initialize () {
@@ -139,26 +140,40 @@ highCardGameEl.on( 'click', function() {
 
 } );
 
+// when you click on an image element in the modal ( themes )
 userModal.on( 'click', 'img', function ( event ) {
 
+  // theme that was clicked 
   var themeSelection = $( event.target );
-  var otherThemes = userModal.children().children().children( 'img' ).not( themeSelection );
-  console.log( otherThemes );
 
+  // everything else
+  var otherThemes = userModal.children().children().children( 'img' ).not( themeSelection );
+
+  // add highlight class and remove from others
   themeSelection.addClass( 'selected-theme' );
   otherThemes.removeClass( 'selected-theme' );
 
+  // set theme index to value store in img element
   themeIndex = parseInt( themeSelection.data( 'theme' ) );
 
 } );
 
+// when play game button is clicked
 playGameElButton.on( 'click', function() {
 
-  if ( !usernameEntryEl.val() ) return;
+  // if no user name entered
+  if ( !usernameEntryEl.val() ) {
+
+    nameEntryErrorEl.text( 'Please enter a name!' );
+    
+    return;
+  
+  }
 
   userName = usernameEntryEl.val();
 
   if ( !themeIndex ) themeIndex = 0;
 
+  location.href = 'gamepage.html';
 
 } );
