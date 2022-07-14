@@ -6,7 +6,7 @@ var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 var userName = localStorage.getItem( 'user_name' );
 var themeIndex =  localStorage.getItem( 'deck_theme' );
 
-const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', '', '', '' ];
+const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', './assets/images/awkward-turtle-card-theme.jpg', './assets/images/mountain-card-theme.jpg', './assets/images/humming-bird-card-theme.jpg', '' ];
 
 // index.html elements
 var highCardGameEl = $( '#highCardGame' );
@@ -226,6 +226,7 @@ userModal.on( 'click', 'img', function ( event ) {
 
   // set theme index to value store in img element
   themeIndex = parseInt( themeSelection.data( 'theme' ) );
+  localStorage.setItem( 'deck_theme', themeIndex );
 
 } );
 
@@ -246,7 +247,6 @@ playGameElButton.on( 'click', function() {
   if ( !themeIndex ) themeIndex = 0;
 
   localStorage.setItem( 'user_name', userName );
-  localStorage.setItem( 'deck_theme', themeIndex );
 
   location.href = 'gamepage.html';
 
