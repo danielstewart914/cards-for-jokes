@@ -4,6 +4,8 @@ var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
 
+var displayJoke = document.getElementById("jokeData")
+
 //Card retrieval
 var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
@@ -87,11 +89,27 @@ function getJoke() {
   fetch(jokeAPIUrl)
   .then(function (response) {
       response.json().then(function (data) {
-        console.log(data);
+        console.log(data)
 
       });
-    });
+    })
 }
+
+// render joke to console
+fetch (jokeAPIUrl)
+.then((response) => {
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error("NETWORK RESPONSE ERROR");
+  }
+})
+.then(data => {
+  getJoke(data)
+})
+.catch((error) => console.error("FETCH ERROR:", error));
+
+// display Joke
 
 // initialize game (index.html) modal
 $(document).ready(function(){
