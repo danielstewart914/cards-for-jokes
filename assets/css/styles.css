@@ -114,21 +114,26 @@ summary {
     margin: 1rem;
 }
 
-#modal1 {
+#user-modal {
     border: solid black 2px;
 }
 
 .modal-footer {
     border-top: solid black 1px;
 }
+
 .theme {
     display: inline;
     margin-left: 1.75%;
 }
 
-#deck {
-    width: 12.5rem;
-    height: 16rem;
+.row {
+    text-align: center;
+}
+
+.deck {
+    width: 24%;
+    aspect-ratio: 2 / 3;
     border: solid black 2px;
     border-radius: 0.7rem;
 } 
@@ -175,4 +180,22 @@ summary {
 
 .userDeck:hover {
     transform: scale(1);
+}
+=======
+.selected-theme {
+
+    border: 0.5rem solid red;
+
+}
+
+@media screen and (min-width: 768px) {
+    .deck {
+        width: 18%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .deck {
+        width: 12%;
+    }
 }

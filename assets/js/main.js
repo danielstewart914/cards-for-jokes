@@ -2,12 +2,26 @@ var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 
+// user settings
+var userName = localStorage.getItem( 'user_name' );
+var themeIndex =  localStorage.getItem( 'deck_theme' );
+
+const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', './assets/images/awkward-turtle-card-theme.jpg', './assets/images/mountain-card-theme.jpg', './assets/images/humming-bird-card-theme.jpg', '' ];
+
+// index.html elements
+var highCardGameEl = $( '#highCardGame' );
+var userModal = $( '#user-modal' );
+var playGameElButton = $( '#play-game' );
+var usernameEntryEl = $( '#username-entry' );
+var nameEntryErrorEl = $( '#name-entry-error' );
+
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
 
 //Card retrieval
 var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
+
 
 // initialize data
 function initialize () {
@@ -191,3 +205,53 @@ function renderBottomRow () {
 }
 
 initialize();
+
+highCardGameEl.on( 'click', function( event ) {
+
+  event.preventDefault();
+
+  if( userName ) location.href = 'gamepage.html'
+  else userModal.modal( 'open' );
+
+} );
+
+// when you click on an image element in the modal ( themes )
+userModal.on( 'click', 'img', function ( event ) {
+
+  // theme that was clicked 
+  var themeSelection = $( event.target );
+
+  // everything else
+  var otherThemes = userModal.children().children().children( 'img' ).not( themeSelection );
+
+  // add highlight class and remove from others
+  themeSelection.addClass( 'selected-theme' );
+  otherThemes.removeClass( 'selected-theme' );
+
+  // set theme index to value store in img element
+  themeIndex = parseInt( themeSelection.data( 'theme' ) );
+  localStorage.setItem( 'deck_theme', themeIndex );
+
+} );
+
+// when play game button is clicked
+playGameElButton.on( 'click', function() {
+
+  // if no user name entered
+  if ( !usernameEntryEl.val() ) {
+
+    nameEntryErrorEl.text( 'Please enter a name!' );
+    
+    return;
+  
+  }
+
+  userName = usernameEntryEl.val();
+
+  if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+
+  location.href = 'gamepage.html';
+
+} );
