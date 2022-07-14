@@ -3,8 +3,8 @@ var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 
 // user settings
-var userName = JSON.parse( localStorage.getItem( 'user_name' ) );
-var themeIndex = parseInt( JSON.parse( localStorage.getItem( 'deck_theme' ) ) );
+var userName = localStorage.getItem( 'user_name' );
+var themeIndex =  localStorage.getItem( 'deck_theme' );
 
 const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', '', '', '' ];
 
@@ -202,7 +202,9 @@ function renderBottomRow () {
 
 initialize();
 
-highCardGameEl.on( 'click', function() {
+highCardGameEl.on( 'click', function( event ) {
+
+  event.preventDefault();
 
   if( userName ) location.href = 'gamepage.html'
   else userModal.modal( 'open' );
