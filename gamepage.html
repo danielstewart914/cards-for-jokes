@@ -27,67 +27,56 @@
   <body class="flow-text">
 
     <!-- Navbar  -->
-    <nav class="nav-wrapper pink lighten-4 valign-wrapper">
+    <nav class="nav-wrapper valign-wrapper">
       <div class="container">
-        <a href="#" class="brand-logo black-text">Cards for Jokes</a>
+        <a href="#" class="brand-logo white-text">Cards for Jokes</a>
         <a href="#" class="sidenav-trigger black-text" data-target="mobile-links">
-          <i class="material-icons">menu</i>
+          <i class="material-icons white-text">menu</i>
         </a>
+         <!-- Temporary Modal Trigger -->
         <ul class="right hide-on-med-and-down">
-            <li><a class="black-text" href="index.html"><i class="material-icons left black-text">home</i>Home</a></li>
-            <li><a class="black-text" href="highscores.html"><i class="material-icons left black-text">view_list</i>High Scores</a></li>
-            <li><a class="black-text" href="myjokes.html"><i class="material-icons left black-text">gamepad</i>My Jokes</a></li>
+            <li><a class="white-text" href="index.html"><i class="material-icons left white-text">home</i>Home</a></li>
+            <li><a class="white-text" href="highscores.html"><i class="material-icons left white-text">view_list</i>High Scores</a></li>
+            <li><a class="white-text" href="myjokes.html"><i class="material-icons left white-text">gamepad</i>My Jokes</a></li>
+            <li class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</li>
           </ul>
       </div>
     </nav>
 
     <!-- Side nav trigger for small screens -->
-    <ul class="sidenav pink lighten-2 center-align black-text" id="mobile-links">
-        <li><a href="index.html"><i class="material-icons left">home</i></a></li>
-        <li><a href="highscores.html"><i class="material-icons left">view_list</i></a></li>
-        <li><a href="myjokes.html"><i class="material-icons left">gamepad</i></a></li>
+    <ul class="sidenav lime darken-2 center-align white-text" id="mobile-links">
+        <li><a href="index.html"><i class="material-icons left white-text">home</i></a></li>
+        <li><a href="highscores.html"><i class="material-icons left white-text">view_list</i></a></li>
+        <li><a href="myjokes.html"><i class="material-icons left white-text">gamepad</i></a></li>
     </ul>
     <main>
       <div class="games container">
         <div class="center-align gameTitle">
-            <a class="waves-effect waves-light modal-trigger game-card card-back card-overlay z-depth-3" id="user-card" href="#">
+            <a class="modal-trigger game-card card-back gameBox" id="user-card" href="#">
             </a>
           </div>
           <div class="center-align gameTile">
-            <a class="waves-effect waves-light modal-trigger game-card card-back card-overlay z-depth-3" id="center-theme" href="#">
+            <a class="modal-trigger game-card card-back card-overlay z-depth-3 userDeck" id="center-theme" href="#">
             </a>
           </div>
           <div class="center-align gameTile">
-            <a class="waves-effect waves-light modal-trigger game-card card-back card-overlay z-depth-3" id="computer-card" href="#">
+            <a class="modal-trigger game-card card-back card-overlay z-depth-3 gameBox" id="computer-card" href="#">
             </a>
           </div>
-
       </div>
-      <!-- Commented out for this styling-->
-      <!-- <div class="card-row pink lighten-5" id="bottomCardRow"></div> -->
+      <div class="card-row" id="bottomCardRow"></div>
     </main>
 
-     <!-- Modal Structure -->
+     <!--Modal Structure-->
   <div id="modal1" class="modal">
     <div class="modal-content center-align">
-        <div class="form-group">
-            <h6>Who is playing?</h6>
-            <input type="text" id="username" class="form-control" placeholder="Enter your name here"
-              required />
-          </div>
-      <h6>Pick your theme:</h6>
+      <h6>JOKE!</h6>
     </div>
-   <div class="row">
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
-        <div class="theme"><img id="deck" src="./assets/images/batman_deck.jpeg"></div>
+    <div class="modal-footer orange accent-4">
+      <h5 href="#" class="modal-close waves-effect waves-light btn">SAVE JOKE</h5>
+      <h5 href="#" class="modal-close waves-effect waves-light btn">SAVE JOKE</h5>
     </div>
-    <div class="modal-footer light-blue lighten-1">
-      <h5 href="#" class="modal-close waves-effect waves-light btn">PLAY GAME</h5>
     </div>
-  </div>
   </div>
 
     <!-- jquery -->

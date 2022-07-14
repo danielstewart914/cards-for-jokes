@@ -107,7 +107,7 @@ function getJoke() {
     });
 }
 
-// initialize modal
+// initialize game (index.html) modal
 $(document).ready(function(){
   $('.modal').modal();
 });
@@ -116,6 +116,11 @@ $(document).ready(function(){
 $(document).ready(function () {
   $(".sidenav").sidenav();
 });
+
+// initialize joke (gamepage.html)modal
+$(document).ready(function () {
+  if (user_val > comp_val);
+})
 
 // get new deck
 async function getNewDeck( deckCount ) {
@@ -166,7 +171,6 @@ async function drawCard( numberOfCards ) {
     console.error( 'Error: ' + response.statusText );
 
   }
-
 
 }
 
