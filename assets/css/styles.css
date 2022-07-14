@@ -164,8 +164,9 @@ summary {
 
 .gameBox {
     opacity: 1;
-    border: solid white 6px;
+    border: solid black 1px;;
     background-image:url(../images/fleur.jpeg);
+
 }
 
 .gameBox:hover {
