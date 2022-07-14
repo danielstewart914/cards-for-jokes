@@ -113,21 +113,26 @@ summary {
     margin: 7px;
 }
 
-#modal1 {
+#user-modal {
     border: solid black 2px;
 }
 
 .modal-footer {
     border-top: solid black 1px;
 }
+
 .theme {
     display: inline;
     margin-left: 1.75%;
 }
 
-#deck {
-    width: 12.5rem;
-    height: 16rem;
+.row {
+    text-align: center;
+}
+
+.deck {
+    width: 15%;
+    aspect-ratio: 1 / 1.5;
     border: solid black 2px;
     border-radius: 0.7rem;
 } 
@@ -148,4 +153,10 @@ summary {
 #jokeBox {
     border: solid black 1px;
     width: 22rem;
+}
+
+.selected-theme {
+
+    border: 0.5rem solid red;
+
 }
