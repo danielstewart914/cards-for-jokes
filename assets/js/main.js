@@ -4,7 +4,7 @@ var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 
 // user settings
 var userName = JSON.parse( localStorage.getItem( 'user_name' ) );
-var themeIndex = JSON.parse( localStorage.getItem( 'deck_theme' ) );
+var themeIndex = parseInt( JSON.parse( localStorage.getItem( 'deck_theme' ) ) );
 
 const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', '', '', '' ];
 
@@ -173,6 +173,9 @@ playGameElButton.on( 'click', function() {
   userName = usernameEntryEl.val();
 
   if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+  localStorage.setItem( 'deck_theme', themeIndex );
 
   location.href = 'gamepage.html';
 
