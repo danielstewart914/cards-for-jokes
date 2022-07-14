@@ -75,7 +75,7 @@ nav {
    
 }
 
-.modal-trigger {
+.game-heading {
     font-weight: 500;
     width: 90%;
     font-family:'Poppins', sans-serif;
@@ -181,11 +181,15 @@ summary {
 .userDeck:hover {
     transform: scale(1);
 }
-=======
+
 .selected-theme {
 
     border: 0.5rem solid red;
 
+}
+
+.hidden {
+    display: none;
 }
 
 @media screen and (min-width: 768px) {
