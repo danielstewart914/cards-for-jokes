@@ -6,6 +6,13 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../images/winter.avif);
+    background-attachment: fixed;
+}   
+
+body .modal {
+    width: 75vw;
 }
 
 main {
@@ -13,7 +20,25 @@ main {
     display: flex;
     flex: 1;
     flex-direction: column; 
-    background-image: linear-gradient(-140deg, #1b5e20, #4caf50);
+    
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    z-index: 4;
+    height: 4.4rem;
+    font-family:'Poppins', sans-serif;
+    border-bottom: black solid 1px;
+}
+
+.sidenav {
+    width: 6rem;
+    border-right: solid black 1px;
+}
+
+.black-text {
+    font-size: 1.5rem;
 }
 
 .games {
@@ -23,30 +48,39 @@ main {
     align-items: center;
     flex-wrap: wrap;
     padding: 3rem;
-    height: 100%;
-}
-
-.gameTile {
-    margin-bottom: 5rem;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 2rem;
 }
 
 .game-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid white;
+    border: 0.1rem solid black;
     border-radius: 1rem;
     aspect-ratio: 2 / 3;
-    width: 15rem;
+    width: 10rem;
     margin: 1rem;
+    margin-bottom: 3.3rem;
     color: black;
+    z-index: 1;
+    opacity: 0.6;
 }
 
-.card-name{
-    font-weight: 800;
-    background-color: #444444cc;
-    padding: 0.5rem;
-    border-radius: 0.4rem;
+.game-card:hover {
+    transform: scale(1.25);
+    opacity: 1;
+   
+}
+
+.modal-trigger {
+    font-weight: 500;
+    width: 90%;
+    font-family:'Poppins', sans-serif;
+    padding: .5rem;
+    border-radius: 0.7rem;
+    border: black 1px solid;
 }
 
 .card-row {
@@ -58,13 +92,14 @@ main {
     bottom: 0;
     width: 150%;
     left: -25%;
-    z-index: 1;
 }
 
 .card-back {
-    background-image: url(https://deckofcardsapi.com/static/img/X2.png);
-    background-size: 115%;
+    background-image: url(../images/jokercard.jpeg);
+    background-size: 100%;
     background-position: center;
+    width: 15rem;
+    z-index: 0;
 }
 
 .card-row > img {
@@ -72,14 +107,45 @@ main {
     margin: 0.5rem;
 }
 
-.game-card:hover, .card:focus {
-    background-color: transparent;
-    color: white;
+summary {
+    border: black solid 1px;
+    opacity: 0.8;
+    margin: 7px;
 }
 
-@media ( hover ) {
-    .card-overlay {
-        background-color: #99999966;
-        background-blend-mode: overlay;
-    }
+#modal1 {
+    border: solid black 2px;
+}
+
+.modal-footer {
+    border-top: solid black 1px;
+}
+.theme {
+    display: inline;
+    margin-left: 1.75%;
+}
+
+#deck {
+    width: 12.5rem;
+    height: 16rem;
+    border: solid black 2px;
+    border-radius: 0.7rem;
+} 
+
+#rulesBox {
+    display: flex;
+    border: black solid 1px;
+    opacity: 0.8;
+    align-content: center;
+    justify-content: center;
+}
+
+#myJokes {
+    margin-top: 4rem;
+    font-family:'Poppins', sans-serif;
+}
+
+#jokeBox {
+    border: solid black 1px;
+    width: 22rem;
 }
