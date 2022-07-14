@@ -22,6 +22,16 @@ var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
 
+// initialize modals on all pages where main.js is loaded
+$(document).ready(function(){
+  $('.modal').modal();
+});
+
+// initialize sidenav
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
+
 
 // initialize data
 function initialize () {
@@ -106,21 +116,6 @@ function getJoke() {
       });
     });
 }
-
-// initialize game (index.html) modal
-$(document).ready(function(){
-  $('.modal').modal();
-});
-
-// initialize sidenav
-$(document).ready(function () {
-  $(".sidenav").sidenav();
-});
-
-// initialize joke (gamepage.html)modal
-$(document).ready(function () {
-  if (user_val > comp_val);
-})
 
 // get new deck
 async function getNewDeck( deckCount ) {
