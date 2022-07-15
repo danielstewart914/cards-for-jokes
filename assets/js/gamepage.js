@@ -26,10 +26,11 @@ centerThemeCard.on('click', function(event) {
   function determineWinner(user_val, comp_val) {
 
     var cards_value = {
+      'ACE' : 14,
       'KING' : 13,
       'QUEEN' : 12,
       'JACK' : 11,
-      'ACE' : 0
+      
     };
   
     if (cards_value[user_val] !== undefined){
@@ -44,10 +45,15 @@ centerThemeCard.on('click', function(event) {
     comp_val = parseInt(comp_val);
   
     if(user_val == comp_val){
-      console.log("Nobody wins");
+      console.log("Nobody Wins");
     } else if(user_val > comp_val ) {
-      console.log("Userwins");
+      console.log("User Wins");
       getJoke();
+      // Prints to HTML but needs to print specific joke
+      document.getElementById("jokeBox").innerHTML = getJoke;
+      $(document).ready(function(){
+        $('.modal1').modal();
+      })
     } else {
       console.log("Computer wins");
     }

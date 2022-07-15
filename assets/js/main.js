@@ -66,11 +66,12 @@ function getJoke() {
     });
 }
 
-// Save joke to local storage
-function saveJokeJSON() {
+// Save joke to local storage - REMOVED JSON from "saveJokeJSON" - was getting an error
+function saveJoke() {
   localStorage.setItem('joke', JSON.stringify('joke'));
 } 
-saveJokeJSON ()
+saveJoke ();
+
 // get joke from local storage
 function jokeHistory() {
   return localStorage.getItem('joke');
@@ -93,7 +94,6 @@ async function getNewDeck( deckCount ) {
   } 
 
 }
-
 
 // shuffle deck
 async function shuffleDeck ( id, onlyRemaining ) {
