@@ -172,7 +172,7 @@ initialize();
 // store to local storage.
 // var highScoresListE1 = document.querySelector("#high-scores");
 
-var savedName = document.getElementById("username").value
+// var savedName = document.getElementById("username").value
 var highScores;
 
 function saveHighScores(){
