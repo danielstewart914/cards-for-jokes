@@ -153,7 +153,9 @@ function renderBottomRow () {
       // set contents of with bottom row element with fragment
       bottomCardRowEl.html( rowFrag );
 
-    } )
+    } ).then( function() {
+      shuffleDeck(deckId, false);
+    })
 
   } );
 
