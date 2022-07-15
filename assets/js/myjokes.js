@@ -26,7 +26,7 @@ for (var iter = 0; iter < jokesArray.length; iter++) {
 
     var imageEl = $('<img>');
     imageEl.attr ('class', 'activator');
-    imageEl.attr ('src' , '/assets/images/binary.jpeg');
+    imageEl.attr ('src' , './assets/images/binary.jpeg');
     cardImageEl.append(imageEl);
 
     var cardContentEl = $('<div>');
