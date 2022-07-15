@@ -66,6 +66,8 @@ function getJoke() {
     });
 }
 
+/* Commenting this for now, so we can work on it later
+
 // Save joke to local storage
 function saveJokeJSON() {
   localStorage.setItem('joke', JSON.stringify('joke'));
@@ -76,6 +78,9 @@ function jokeHistory() {
   return localStorage.getItem('joke');
 }
 console.log(jokeHistory());
+
+
+*/
 
 // get new deck
 async function getNewDeck( deckCount ) {
