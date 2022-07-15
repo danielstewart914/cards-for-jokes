@@ -94,7 +94,7 @@ async function shuffleDeck ( id, onlyRemaining ) {
 
   } 
     
-    }
+}
 
 // draw card(s) 
 async function drawCard( numberOfCards ) {

@@ -7,10 +7,6 @@ var computerCardEl = $('#computer-card');
 
 centerThemeCard.on('click', function(event) {
     event.preventDefault();
-
-    getNewDeck(1).then( function(data) {
-      deckId = data.deck_id;
-      shuffleDeck(deckId).then (function () {
         drawCard(2).then(function(data) {
           console.log(data);
           userCardEl.css('background-image', 'url('+ data.cards[0].image+')');
@@ -20,8 +16,6 @@ centerThemeCard.on('click', function(event) {
           determineWinner(data.cards[0].value,data.cards[1].value);
         });
       });
-    });
-  });
 
   function determineWinner(user_val, comp_val) {
 
@@ -52,3 +46,9 @@ centerThemeCard.on('click', function(event) {
       console.log("Computer wins");
     }
 }
+
+getNewDeck(1).then( function(data) {
+    deckId = data.deck_id;
+    console.log(deckId);
+    shuffleDeck(deckId);
+});
