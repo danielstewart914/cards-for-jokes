@@ -15,7 +15,12 @@ var playGameElButton = $( '#play-game' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
 
+//  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
+var saveJokeJSON = localStorage.getItem('joke');
+var myJokes= [];
+console.log(myJokes);
+
 
 // initialize modals on all pages where main.js is loaded
 $(document).ready(function(){
@@ -60,6 +65,17 @@ function getJoke() {
       });
     });
 }
+
+// Save joke to local storage
+function saveJokeJSON() {
+  localStorage.setItem('joke', JSON.stringify('joke'));
+} 
+saveJokeJSON ()
+// get joke from local storage
+function jokeHistory() {
+  return localStorage.getItem('joke');
+}
+console.log(jokeHistory());
 
 // get new deck
 async function getNewDeck( deckCount ) {
