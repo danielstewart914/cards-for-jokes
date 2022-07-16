@@ -76,7 +76,8 @@ var score = 0;
 centerThemeCard.on('click', function(event) {
   event.preventDefault();
   drawCard(2).then(function(data) {
-    userCardEl.css('background-image', 'url('+ data.cards[0].image+')');
+    userCardEl.css('background-image', 'url('+ data.cards[0].
+    image+')');
     computerCardEl.css('background-image', 'url('+ data.cards[1].image+')');
   
     // Determine who is the winner
