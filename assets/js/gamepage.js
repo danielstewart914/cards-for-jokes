@@ -4,6 +4,7 @@ var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
 
+var score = 0;
 
 centerThemeCard.on('click', function(event) {
   event.preventDefault();
@@ -13,6 +14,15 @@ centerThemeCard.on('click', function(event) {
   
     // Determine who is the winner
     determineWinner(data.cards[0].value,data.cards[1].value);
+    if (data.remaining == 0) {
+      // TODO: save score to local storage
+
+      // end game - can be changed to a modal later.
+      alert("Your score is: " + score);
+      // Go to highscore page
+      window.location = 'highscores.html';
+    }
+
   });
 });
 
@@ -40,7 +50,14 @@ centerThemeCard.on('click', function(event) {
       console.log("Nobody wins");
     } else if(user_val > comp_val ) {
       console.log("Userwins");
-      getJoke();
+      score += 10;
+      getJoke().then( function(data) {
+        if (data.type == 'single') {
+          console.log(data.joke);
+        } else {
+          console.log(data.setup + data.delivery);
+        }
+      });
     } else {
       console.log("Computer wins");
     }

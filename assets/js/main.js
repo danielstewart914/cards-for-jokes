@@ -75,14 +75,13 @@ function initialize () {
 }
 
 // Get Joke from Joke API
-function getJoke() {
-  fetch(jokeAPIUrl)
-  .then(function (response) {
-      response.json().then(function (data) {
-        console.log(data);
-
-      });
-    });
+async function getJoke() {
+  const response = await fetch(jokeAPIUrl);
+  if (response.ok) {
+    return response.json();
+  } else {
+    console.error( 'Error: ' + response.statusText );
+  } 
 }
 
 /* Commenting this for now, so we can work on it later
