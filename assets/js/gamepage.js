@@ -2,23 +2,6 @@ var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
 
-var currentJoke;
-var myJokes= [];
-
-function saveJoke(){
-  myJokes.push(currentJoke);
-  localStorage.setItem("jokes", JSON.stringify(myJokes));
-}
-
-function loadJokesJSON(){
-  var jokesJSON = localStorage.getItem("jokes");
-  myJokes = JSON.parse(jokesJSON);
-}
-
-if (localStorage.getItem("jokes")){
-  loadJokesJSON();
-}
-
 var score = 0;
 
   function determineWinner(user_val, comp_val) {
