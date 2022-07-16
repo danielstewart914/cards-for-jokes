@@ -51,7 +51,13 @@ centerThemeCard.on('click', function(event) {
     } else if(user_val > comp_val ) {
       console.log("Userwins");
       score += 10;
-      console.log(score);
+      getJoke().then( function(data) {
+        if (data.type == 'single') {
+          console.log(data.joke);
+        } else {
+          console.log(data.setup + data.delivery);
+        }
+      });
     } else {
       console.log("Computer wins");
     }
