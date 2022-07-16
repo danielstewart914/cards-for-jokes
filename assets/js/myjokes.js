@@ -1,5 +1,7 @@
-//TODO - Get jokes from local storage (Created dummy array for now)
-var jokesArray = ["Joke1" , "Joke2" , "Joke3" , "Joke4"];
+//Get Jokes from Local Storage
+
+var jokesArray =  localStorage.getItem('jokes') || "[]";
+jokesArray = JSON.parse(jokesArray);
 
 var rootEl = $('#joke-container');
 

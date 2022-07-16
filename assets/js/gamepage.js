@@ -36,22 +36,18 @@ var score = 0;
         if (data.type = 'single' && data.joke) {
           console.log(data.joke);
           jokeBoxEl.html( data.joke );
+          currentJoke = data.joke;
         } else {
           console.log(data.setup + data.delivery)
           jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
+          currentJoke = data.setup + data.delivery;
         }
+        saveJoke();
       })
     } else {
       console.log("Computer wins");
     }
   }
-
-//Card retrieval
-var centerThemeCard = $('#center-theme');
-var userCardEl = $('#user-card');
-var computerCardEl = $('#computer-card');
-
-var score = 0;
 
 centerThemeCard.on('click', function(event) {
   event.preventDefault();
