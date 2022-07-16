@@ -14,6 +14,15 @@ centerThemeCard.on('click', function(event) {
   
     // Determine who is the winner
     determineWinner(data.cards[0].value,data.cards[1].value);
+    if (data.remaining == 0) {
+      // TODO: save score to local storage
+
+      // end game - can be changed to a modal later.
+      alert("Your score is: " + score);
+      // Go to highscore page
+      window.location = 'highscores.html';
+    }
+
   });
 });
 
