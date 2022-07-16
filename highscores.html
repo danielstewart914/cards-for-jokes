@@ -48,13 +48,27 @@
         <li><a href="myjokes.html"><i class="material-icons left white-text">gamepad</i></a></li>
     </ul>
     <main>
+      <table>
+      <div style="margin-top: 100px; align-items: center;"></div>
+
+      <table class="striped" style="width: 90%; margin-left: 50px; ">
+        <caption style="font-weight: 900; font-size: 50px;">High Scores</caption>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="highScores"></tbody>
+      </table> 
       <div class="card-row" id="bottomCardRow"></div>
     </main>
-    
+
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/highscores.js"></script>
   </body>
 </html>

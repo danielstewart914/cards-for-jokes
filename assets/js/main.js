@@ -1,19 +1,33 @@
 var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
+var documentRootEl = $( ':root' );
 
 // user settings
 var userName = localStorage.getItem( 'user_name' );
 var themeIndex =  localStorage.getItem( 'deck_theme' );
 
-const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', './assets/images/awkward-turtle-card-theme.jpg', './assets/images/mountain-card-theme.jpg', './assets/images/humming-bird-card-theme.jpg', '' ];
+const themes = [ 
+  'https://deckofcardsapi.com/static/img/back.png', 
+  './assets/images/batman-deck-theme.jpg', 
+  './assets/images/awkward-turtle-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme.jpg', 
+  './assets/images/humming-bird-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme-2.jpg' 
+
+];
 
 // index.html elements
 var highCardGameEl = $( '#highCardGame' );
 var userModal = $( '#user-modal' );
 var playGameElButton = $( '#play-game' );
+var welcomeDisplayEl = $( '#welcome-display' );
+var saveUserSettingsButtonEl = $( '#save-user-settings' );
+var changeUSerSettingsButtonEl = $( '#change-user-settings' );
+var userNameDisplayEl = $( '#user-name' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
+var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
@@ -35,6 +49,23 @@ $(document).ready(function () {
 // initialize data
 function initialize () {
 
+  // if there is a user name show welcome element
+  if ( userName ) {
+
+    welcomeDisplayEl.removeClass( 'invisible' );
+    userNameDisplayEl.text( userName );
+
+  }
+
+  if ( themeIndex !== null ) {
+
+    // if there is a them selected add highlight to selected theme card
+    userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
+    themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+    changeTheme();
+
+  }
+
   if( !deckId ) {
 
     getNewDeck( 1 )
@@ -55,19 +86,27 @@ function initialize () {
 
 }
 
-// Get Joke from Joke API
-function getJoke() {
-  fetch(jokeAPIUrl)
-  .then(function (response) {
-      response.json().then(function (data) {
-        console.log(data);
+function changeTheme () {
 
-      });
-    });
+  if ( themeIndex ) documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
+  else documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
+
 }
 
-// Save joke to local storage - REMOVED JSON from "saveJokeJSON" - was getting an error
-function saveJoke() {
+// Get Joke from Joke API
+async function getJoke() {
+  const response = await fetch(jokeAPIUrl);
+  if (response.ok) {
+    return response.json();
+  } else {
+    console.error( 'Error: ' + response.statusText );
+  } 
+}
+
+/* Commenting this for now, so we can work on it later
+
+// Save joke to local storage
+function saveJokeJSON() {
   localStorage.setItem('joke', JSON.stringify('joke'));
 } 
 saveJoke ();
@@ -77,6 +116,9 @@ function jokeHistory() {
   return localStorage.getItem('joke');
 }
 console.log(jokeHistory());
+
+
+*/
 
 // get new deck
 async function getNewDeck( deckCount ) {
@@ -153,20 +195,54 @@ function renderBottomRow () {
       // set contents of with bottom row element with fragment
       bottomCardRowEl.html( rowFrag );
 
-    } )
+    } ).then( function() {
+      shuffleDeck(deckId, false);
+    })
 
   } );
 
 }
 
+function saveUserName() {
+
+  if ( usernameEntryEl.val() ) userName = usernameEntryEl.val();
+
+  if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+
+}
+
 initialize();
+
+// HighScores
+// store to local storage.
+// var highScoresListE1 = document.querySelector("#high-scores");
+
+// var savedName = document.getElementById("username").value
+var highScores;
+
+function saveHighScores(){
+  // dummy entries for testing
+  highScores =[{name: "Mike", score: 10}, {name: "john", score: 20}];
+  localStorage.setItem('highScores', JSON.stringify(highScores))
+}
+ 
+saveHighScores()
 
 highCardGameEl.on( 'click', function( event ) {
 
   event.preventDefault();
 
-  if( userName ) location.href = 'gamepage.html'
-  else userModal.modal( 'open' );
+  if( userName ) location.href = 'gamepage.html';
+
+  else {
+    
+    playGameElButton.removeClass( 'hidden' );
+    saveUserSettingsButtonEl.addClass( 'hidden' );
+    userModal.modal( 'open' );
+
+  }
 
 } );
 
@@ -187,26 +263,45 @@ userModal.on( 'click', 'img', function ( event ) {
   themeIndex = parseInt( themeSelection.data( 'theme' ) );
   localStorage.setItem( 'deck_theme', themeIndex );
 
+  themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+  changeTheme();
+
 } );
 
 // when play game button is clicked
 playGameElButton.on( 'click', function() {
 
-  // if no user name entered
-  if ( !usernameEntryEl.val() ) {
+    // if no user name entered
+    if ( !usernameEntryEl.val() ) {
 
-    nameEntryErrorEl.text( 'Please enter a name!' );
+      nameEntryErrorEl.text( 'Please enter a name!' );
+      
+      return;
     
-    return;
-  
-  }
+    }
 
-  userName = usernameEntryEl.val();
-
-  if ( !themeIndex ) themeIndex = 0;
-
-  localStorage.setItem( 'user_name', userName );
+  saveUserName();
 
   location.href = 'gamepage.html';
+
+} );
+
+// open modal with save button
+changeUSerSettingsButtonEl.on( 'click', function () {
+
+  playGameElButton.addClass( 'hidden' );
+  saveUserSettingsButtonEl.removeClass( 'hidden' );
+  userModal.modal( 'open' );
+
+} );
+
+//  save user settings
+saveUserSettingsButtonEl.on( 'click', function() {
+
+  saveUserName();
+
+  userNameDisplayEl.text( userName );
+
+  userModal.modal( 'close' );
 
 } );
