@@ -12,6 +12,10 @@ const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/ima
 var highCardGameEl = $( '#highCardGame' );
 var userModal = $( '#user-modal' );
 var playGameElButton = $( '#play-game' );
+var welcomeDisplayEl = $( '#welcome-display' );
+var saveUserSettingsButtonEl = $( '#save-user-settings' );
+var changeUSerSettingsButtonEl = $( '#change-user-settings' );
+var userNameDisplayEl = $( '#user-name' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
 
@@ -34,6 +38,13 @@ $(document).ready(function () {
 
 // initialize data
 function initialize () {
+
+  if ( userName ) {
+
+    welcomeDisplayEl.removeClass( 'invisible' );
+    userNameDisplayEl.text( userName );
+
+  }
 
   if( !deckId ) {
 
@@ -187,8 +198,15 @@ highCardGameEl.on( 'click', function( event ) {
 
   event.preventDefault();
 
-  if( userName ) location.href = 'gamepage.html'
-  else userModal.modal( 'open' );
+  if( userName ) location.href = 'gamepage.html';
+
+  else {
+    
+    playGameElButton.removeClass( 'hidden' );
+    saveUserSettingsButtonEl.addClass( 'hidden' );
+    userModal.modal( 'open' );
+
+  }
 
 } );
 
@@ -230,5 +248,34 @@ playGameElButton.on( 'click', function() {
   localStorage.setItem( 'user_name', userName );
 
   location.href = 'gamepage.html';
+
+} );
+
+changeUSerSettingsButtonEl.on( 'click', function () {
+
+  playGameElButton.addClass( 'hidden' );
+  saveUserSettingsButtonEl.removeClass( 'hidden' );
+  userModal.modal( 'open' );
+
+} );
+
+saveUserSettingsButtonEl.on( 'click', function() {
+
+  // if no user name entered
+  if ( !usernameEntryEl.val() ) {
+
+    nameEntryErrorEl.text( 'Please enter a name!' );
+    
+    return;
+  
+  }
+
+  userName = usernameEntryEl.val();
+
+  if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+
+  userModal.modal( 'close' );
 
 } );

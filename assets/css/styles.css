@@ -188,6 +188,19 @@ summary {
 
 }
 
+.welcome {
+    position: absolute;
+    top: 6.5rem;
+    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
 .hidden {
     display: none;
 }

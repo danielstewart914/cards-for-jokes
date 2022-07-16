@@ -49,7 +49,12 @@
     <main>
       <div class="games container">
     <!-- Game Choices -->
-
+    <div id="welcome-display" class="welcome invisible">
+      Welcome&nbsp;
+      <span id="user-name"></span>
+      &nbsp;
+      <button id="change-user-settings" class="waves-effect waves-light btn brown darken-4 white-text">Change</button>
+    </div>
         <!-- High Card Wins -->
         <div class="center-align gameTile">
           <a id="highCardGame" class="game-heading game-card card-back card-overlay z-depth-3" href="">
@@ -150,6 +155,7 @@
     <div class="modal-footer orange accent-4">
       <span id="name-entry-error"></span>
       <button id="play-game" class="waves-effect waves-light btn brown darken-4 white-text">PLAY GAME</button>
+      <button id="save-user-settings" class="waves-effect waves-light btn brown darken-4 white-text hidden">Save</button>
     </div>
   </div>
 
