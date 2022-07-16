@@ -1,6 +1,7 @@
 var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
+var documentRootEl = $( ':root' );
 
 // user settings
 var userName = localStorage.getItem( 'user_name' );
@@ -56,11 +57,12 @@ function initialize () {
 
   }
 
-  if ( themeIndex >= 0 ) {
+  if ( themeIndex !== null ) {
 
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
     themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+    changeTheme();
 
   }
 
@@ -81,6 +83,13 @@ function initialize () {
     renderBottomRow();
 
   }
+
+}
+
+function changeTheme () {
+
+  if ( themeIndex ) documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
+  else documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
 
 }
 
@@ -255,6 +264,7 @@ userModal.on( 'click', 'img', function ( event ) {
   localStorage.setItem( 'deck_theme', themeIndex );
 
   themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+  changeTheme();
 
 } );
 
