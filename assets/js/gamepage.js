@@ -1,7 +1,7 @@
 var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
-
+var jokeModal = $( '#joke_modal' );
 var score = 0;
 
   function determineWinner(user_val, comp_val) {
@@ -28,6 +28,7 @@ var score = 0;
       console.log("Nobody Wins");
     } else if(user_val > comp_val ) {
       console.log("User Wins");
+      jokeModal.modal( 'open' );
       score +=10;
       getJoke().then( function(data) {
         if (data.type = 'single') {

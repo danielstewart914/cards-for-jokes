@@ -221,6 +221,11 @@ summary {
     color: blue;
 }
 
+#label {
+    background-color: rgba(0, 0, 0, 0.309);
+    color: white;
+    margin: 1rem;
+}
 @media screen and (min-width: 768px) {
     .deck {
         width: 18%;
