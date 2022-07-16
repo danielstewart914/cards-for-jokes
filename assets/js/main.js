@@ -39,10 +39,18 @@ $(document).ready(function () {
 // initialize data
 function initialize () {
 
+  // if there is a user name show welcome element
   if ( userName ) {
 
     welcomeDisplayEl.removeClass( 'invisible' );
     userNameDisplayEl.text( userName );
+
+  }
+
+  if ( themeIndex >= 0 ) {
+
+    // if there is a them selected add highlight to selected theme card
+    userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
 
   }
 
@@ -177,6 +185,16 @@ function renderBottomRow () {
 
 }
 
+function saveUserName() {
+
+  if ( usernameEntryEl.val() ) userName = usernameEntryEl.val();
+
+  if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+
+}
+
 initialize();
 
 // HighScores
@@ -232,25 +250,22 @@ userModal.on( 'click', 'img', function ( event ) {
 // when play game button is clicked
 playGameElButton.on( 'click', function() {
 
-  // if no user name entered
-  if ( !usernameEntryEl.val() ) {
+    // if no user name entered
+    if ( !usernameEntryEl.val() ) {
 
-    nameEntryErrorEl.text( 'Please enter a name!' );
+      nameEntryErrorEl.text( 'Please enter a name!' );
+      
+      return;
     
-    return;
-  
-  }
+    }
 
-  userName = usernameEntryEl.val();
-
-  if ( !themeIndex ) themeIndex = 0;
-
-  localStorage.setItem( 'user_name', userName );
+  saveUserName();
 
   location.href = 'gamepage.html';
 
 } );
 
+// open modal with save button
 changeUSerSettingsButtonEl.on( 'click', function () {
 
   playGameElButton.addClass( 'hidden' );
@@ -259,22 +274,12 @@ changeUSerSettingsButtonEl.on( 'click', function () {
 
 } );
 
+//  save user settings
 saveUserSettingsButtonEl.on( 'click', function() {
 
-  // if no user name entered
-  if ( !usernameEntryEl.val() ) {
+  saveUserName();
 
-    nameEntryErrorEl.text( 'Please enter a name!' );
-    
-    return;
-  
-  }
-
-  userName = usernameEntryEl.val();
-
-  if ( !themeIndex ) themeIndex = 0;
-
-  localStorage.setItem( 'user_name', userName );
+  userNameDisplayEl.text( userName );
 
   userModal.modal( 'close' );
 
