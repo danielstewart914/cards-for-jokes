@@ -31,10 +31,6 @@ var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
-var saveJokeJSON = localStorage.getItem('joke');
-var myJokes= [];
-console.log(myJokes);
-
 
 // initialize modals on all pages where main.js is loaded
 $(document).ready(function(){
@@ -112,22 +108,6 @@ async function getJoke() {
   } 
 }
 
-/* Commenting this for now, so we can work on it later
-
-// Save joke to local storage
-function saveJokeJSON() {
-  localStorage.setItem('joke', JSON.stringify('joke'));
-} 
-saveJoke ();
-
-// get joke from local storage
-function jokeHistory() {
-  return localStorage.getItem('joke');
-}
-console.log(jokeHistory());
-
-
-*/
 
 // get new deck
 async function getNewDeck( deckCount ) {
