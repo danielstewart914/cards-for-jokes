@@ -62,9 +62,6 @@ centerThemeCard.on('click', function(event) {
       console.log("Computer wins");
     }
   }
-  userCardEl.css('background-image', 'url('+ data.cards[0].image+')');
-  computerCardEl.css('background-image', 'url('+ data.cards[1].image+')');
-
 
 //Card retrieval
 var centerThemeCard = $('#center-theme');
