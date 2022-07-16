@@ -1,5 +1,6 @@
 :root {
-    --card-width: 
+    --card-width: ;
+    --cardThemeUrl: url(../images/jokercard.jpeg);
 }
 
 body {
@@ -96,16 +97,21 @@ nav {
 }
 
 .card-back {
-    background-image: url(../images/jokercard.jpeg);
+    background-image: var(--cardThemeUrl);
     background-size: 102% 101%;
     background-position: center;
     width: 15rem;
     z-index: 0;
 }
 
-.card-row > img {
+.card-row > img, .small-card {
     height: 3.5rem;
     margin: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.small-card {
+    border: 1px solid #000;
 }
 
 summary {

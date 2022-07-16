@@ -1,12 +1,21 @@
 var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
 var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
+var documentRootEl = $( ':root' );
 
 // user settings
 var userName = localStorage.getItem( 'user_name' );
 var themeIndex =  localStorage.getItem( 'deck_theme' );
 
-const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', './assets/images/awkward-turtle-card-theme.jpg', './assets/images/mountain-card-theme.jpg', './assets/images/humming-bird-card-theme.jpg', '' ];
+const themes = [ 
+  'https://deckofcardsapi.com/static/img/back.png', 
+  './assets/images/batman-deck-theme.jpg', 
+  './assets/images/awkward-turtle-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme.jpg', 
+  './assets/images/humming-bird-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme-2.jpg' 
+
+];
 
 // index.html elements
 var highCardGameEl = $( '#highCardGame' );
@@ -18,6 +27,7 @@ var changeUSerSettingsButtonEl = $( '#change-user-settings' );
 var userNameDisplayEl = $( '#user-name' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
+var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
@@ -47,10 +57,12 @@ function initialize () {
 
   }
 
-  if ( themeIndex >= 0 ) {
+  if ( themeIndex !== null ) {
 
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
+    themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+    changeTheme();
 
   }
 
@@ -71,6 +83,13 @@ function initialize () {
     renderBottomRow();
 
   }
+
+}
+
+function changeTheme () {
+
+  if ( themeIndex ) documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
+  else documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
 
 }
 
@@ -243,6 +262,9 @@ userModal.on( 'click', 'img', function ( event ) {
   // set theme index to value store in img element
   themeIndex = parseInt( themeSelection.data( 'theme' ) );
   localStorage.setItem( 'deck_theme', themeIndex );
+
+  themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
+  changeTheme();
 
 } );
 
