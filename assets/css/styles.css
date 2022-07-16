@@ -97,7 +97,7 @@ nav {
 
 .card-back {
     background-image: url(../images/jokercard.jpeg);
-    background-size: 100%;
+    background-size: 102% 101%;
     background-position: center;
     width: 15rem;
     z-index: 0;
@@ -184,7 +184,7 @@ summary {
 
 .selected-theme {
 
-    border: 0.5rem solid red;
+    border: 0.5rem solid #ff6d00;
 
 }
 
