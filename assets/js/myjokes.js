@@ -3,16 +3,14 @@ var jokesArray = ["Joke1" , "Joke2" , "Joke3" , "Joke4"];
 
 var rootEl = $('#joke-container');
 
+var rowEl = $('<div>');
+rowEl.attr('class','row');
+rootEl.append(rowEl);
+
 for (var iter = 0; iter < jokesArray.length; iter++) {
 
-    if ( iter % 3 == 0 ) {
-        var rowEl = $('<div>');
-        rowEl.attr('class','row');
-        rootEl.append(rowEl);
-    }
-
     var columnEl = $('<div>');
-    columnEl.attr('class','col s4');
+    columnEl.attr('class','col s12 m4 l3');
     rowEl.append(columnEl);
 
     var cardEl = $('<div>');
