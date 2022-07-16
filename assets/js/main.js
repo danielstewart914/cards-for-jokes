@@ -13,8 +13,8 @@ const themes = [
   './assets/images/awkward-turtle-deck-theme.jpg', 
   './assets/images/mountain-deck-theme.jpg', 
   './assets/images/humming-bird-deck-theme.jpg', 
-  './assets/images/mountain-deck-theme-2.jpg' 
-
+  './assets/images/mountain-deck-theme-2.jpg',
+  './assets/images/jokercard.jpeg'
 ];
 
 // index.html elements
