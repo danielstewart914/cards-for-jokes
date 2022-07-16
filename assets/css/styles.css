@@ -211,6 +211,16 @@ summary {
     display: none;
 }
 
+#jokeBox {
+    display: flex;
+    justify-content: center;
+    border: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: blue;
+}
+
 @media screen and (min-width: 768px) {
     .deck {
         width: 18%;
