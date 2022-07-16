@@ -19,9 +19,6 @@ if (localStorage.getItem("jokes")){
   loadJokesJSON();
 }
 
-currentJoke = {test:123, testing:12345}
-saveJoke ();
-
 var score = 0;
 
   function determineWinner(user_val, comp_val) {

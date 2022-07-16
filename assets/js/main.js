@@ -54,7 +54,7 @@ function initialize () {
   }
 
   if ( themeIndex !== null ) {
-
+    console.log( 'hello' )
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
     themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
@@ -84,8 +84,17 @@ function initialize () {
 
 function changeTheme () {
 
-  if ( themeIndex ) documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
-  else documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
+  console.log( themeIndex)
+  if ( themeIndex > 0 ) {
+
+     documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
+  
+  } else {
+
+    documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
+
+  }
+  
 
 }
 
@@ -99,22 +108,6 @@ async function getJoke() {
   } 
 }
 
-/* Commenting this for now, so we can work on it later
-
-// Save joke to local storage
-function saveJokeJSON() {
-  localStorage.setItem('joke', JSON.stringify('joke'));
-} 
-saveJoke ();
-
-// get joke from local storage
-function jokeHistory() {
-  return localStorage.getItem('joke');
-}
-console.log(jokeHistory());
-
-
-*/
 
 // get new deck
 async function getNewDeck( deckCount ) {
