@@ -12,6 +12,10 @@ const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/ima
 var highCardGameEl = $( '#highCardGame' );
 var userModal = $( '#user-modal' );
 var playGameElButton = $( '#play-game' );
+var welcomeDisplayEl = $( '#welcome-display' );
+var saveUserSettingsButtonEl = $( '#save-user-settings' );
+var changeUSerSettingsButtonEl = $( '#change-user-settings' );
+var userNameDisplayEl = $( '#user-name' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
 
@@ -34,6 +38,21 @@ $(document).ready(function () {
 
 // initialize data
 function initialize () {
+
+  // if there is a user name show welcome element
+  if ( userName ) {
+
+    welcomeDisplayEl.removeClass( 'invisible' );
+    userNameDisplayEl.text( userName );
+
+  }
+
+  if ( themeIndex >= 0 ) {
+
+    // if there is a them selected add highlight to selected theme card
+    userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
+
+  }
 
   if( !deckId ) {
 
@@ -166,6 +185,16 @@ function renderBottomRow () {
 
 }
 
+function saveUserName() {
+
+  if ( usernameEntryEl.val() ) userName = usernameEntryEl.val();
+
+  if ( !themeIndex ) themeIndex = 0;
+
+  localStorage.setItem( 'user_name', userName );
+
+}
+
 initialize();
 
 // HighScores
@@ -187,8 +216,15 @@ highCardGameEl.on( 'click', function( event ) {
 
   event.preventDefault();
 
-  if( userName ) location.href = 'gamepage.html'
-  else userModal.modal( 'open' );
+  if( userName ) location.href = 'gamepage.html';
+
+  else {
+    
+    playGameElButton.removeClass( 'hidden' );
+    saveUserSettingsButtonEl.addClass( 'hidden' );
+    userModal.modal( 'open' );
+
+  }
 
 } );
 
@@ -214,21 +250,37 @@ userModal.on( 'click', 'img', function ( event ) {
 // when play game button is clicked
 playGameElButton.on( 'click', function() {
 
-  // if no user name entered
-  if ( !usernameEntryEl.val() ) {
+    // if no user name entered
+    if ( !usernameEntryEl.val() ) {
 
-    nameEntryErrorEl.text( 'Please enter a name!' );
+      nameEntryErrorEl.text( 'Please enter a name!' );
+      
+      return;
     
-    return;
-  
-  }
+    }
 
-  userName = usernameEntryEl.val();
-
-  if ( !themeIndex ) themeIndex = 0;
-
-  localStorage.setItem( 'user_name', userName );
+  saveUserName();
 
   location.href = 'gamepage.html';
+
+} );
+
+// open modal with save button
+changeUSerSettingsButtonEl.on( 'click', function () {
+
+  playGameElButton.addClass( 'hidden' );
+  saveUserSettingsButtonEl.removeClass( 'hidden' );
+  userModal.modal( 'open' );
+
+} );
+
+//  save user settings
+saveUserSettingsButtonEl.on( 'click', function() {
+
+  saveUserName();
+
+  userNameDisplayEl.text( userName );
+
+  userModal.modal( 'close' );
 
 } );
