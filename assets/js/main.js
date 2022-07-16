@@ -58,7 +58,7 @@ function initialize () {
   }
 
   if ( themeIndex !== null ) {
-
+    console.log( 'hello' )
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
     themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
@@ -88,8 +88,17 @@ function initialize () {
 
 function changeTheme () {
 
-  if ( themeIndex ) documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
-  else documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
+  console.log( themeIndex)
+  if ( themeIndex > 0 ) {
+
+     documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );
+  
+  } else {
+
+    documentRootEl.css( '--cardThemeUrl', `url( '${ themes[ themeIndex ] }' )` );
+
+  }
+  
 
 }
 
