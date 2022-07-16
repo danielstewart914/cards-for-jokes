@@ -222,6 +222,10 @@ summary {
     color: blue;
 }
 
+#joke-container {
+    font-size: 1.2rem;
+
+}
 #label {
     background-color: rgba(0, 0, 0, 0.309);
     color: white;
