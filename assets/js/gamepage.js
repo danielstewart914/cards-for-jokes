@@ -1,7 +1,7 @@
 var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
-var jokeModal = $( '#joke_modal' );
+var jokeModal = $( '#jokeModal' );
 var score = 0;
 
   function determineWinner(user_val, comp_val) {
