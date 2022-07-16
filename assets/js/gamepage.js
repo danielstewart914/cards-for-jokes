@@ -31,12 +31,12 @@ var score = 0;
       jokeModal.modal( 'open' );
       score +=10;
       getJoke().then( function(data) {
-        if (data.type = 'single') {
+        if (data.type = 'single' && data.joke) {
           console.log(data.joke);
           document.getElementById("jokeBox").innerHTML = data.joke;
         } else {
           console.log(data.setup + data.delivery)
-          document.getElementById("jokeBox").innerHTML = data.setup + data.delivery;
+          document.getElementById("jokeBox").innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
         }
       })
     } else {
@@ -71,7 +71,7 @@ centerThemeCard.on('click', function(event) {
   });
 });
 
-  function determineWinner(user_val, comp_val) {
+  /*function determineWinner(user_val, comp_val) {
 
     var cards_value = {
       'KING' : 13,
@@ -109,4 +109,4 @@ centerThemeCard.on('click', function(event) {
     } else {
       console.log("Computer wins");
     }
-}
+} */
