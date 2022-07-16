@@ -4,6 +4,7 @@ var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
 
+var score = 0;
 
 centerThemeCard.on('click', function(event) {
   event.preventDefault();
@@ -40,7 +41,8 @@ centerThemeCard.on('click', function(event) {
       console.log("Nobody wins");
     } else if(user_val > comp_val ) {
       console.log("Userwins");
-      getJoke();
+      score += 10;
+      console.log(score);
     } else {
       console.log("Computer wins");
     }
