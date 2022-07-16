@@ -4,26 +4,6 @@ var computerCardEl = $('#computer-card');
 
 var score = 0;
 
-centerThemeCard.on('click', function(event) {
-  event.preventDefault();
-  drawCard(2).then(function(data) {
-    userCardEl.css('background-image', 'url('+ data.cards[0].image+')');
-    computerCardEl.css('background-image', 'url('+ data.cards[1].image+')');
-  
-    // Determine who is the winner
-    determineWinner(data.cards[0].value,data.cards[1].value);
-    if (data.remaining == 0) {
-      // TODO: save score to local storage
-
-      // end game - can be changed to a modal later.
-      alert("Your score is: " + score);
-      // Go to highscore page
-      window.location = 'highscores.html';
-    }
-
-  });
-});
-
   function determineWinner(user_val, comp_val) {
 
     var cards_value = {
