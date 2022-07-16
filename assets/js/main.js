@@ -31,10 +31,6 @@ var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
-var saveJokeJSON = localStorage.getItem('joke');
-var myJokes= [];
-console.log(myJokes);
-
 
 // initialize modals on all pages where main.js is loaded
 $(document).ready(function(){
