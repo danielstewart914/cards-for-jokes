@@ -1,7 +1,7 @@
 //Get Jokes from Local Storage
 
-var jokesArray =  localStorage.getItem('jokes') || "[]";
-jokesArray = JSON.parse(jokesArray);
+myJokes =  localStorage.getItem('jokes') || "[]";
+myJokes = JSON.parse(myJokes);
 
 var rootEl = $('#joke-container');
 
@@ -9,7 +9,7 @@ var rowEl = $('<div>');
 rowEl.attr('class','row');
 rootEl.append(rowEl);
 
-for (var iter = 0; iter < jokesArray.length; iter++) {
+for (var iter = 0; iter < myJokes.length; iter++) {
 
     var columnEl = $('<div>');
     columnEl.attr('class','col s12 m4 l3');
@@ -56,6 +56,6 @@ for (var iter = 0; iter < jokesArray.length; iter++) {
     spanRevealEl.append(iconRevealEl);
 
     var jokeContentEl = $('<p>');
-    jokeContentEl.text(jokesArray[iter]);
+    jokeContentEl.text(myJokes[iter]);
     cardRevealEl.append(jokeContentEl);
 }

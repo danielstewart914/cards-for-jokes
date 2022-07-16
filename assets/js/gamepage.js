@@ -1,6 +1,7 @@
 var centerThemeCard = $('#center-theme');
 var userCardEl = $('#user-card');
 var computerCardEl = $('#computer-card');
+var hilariousEl = $('#hilarious')
 var jokeModal = $( '#jokeModal' );
 var jokeBoxEl = $( '#jokeBox' )
 var score = 0;
@@ -42,7 +43,10 @@ var score = 0;
           jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
           currentJoke = data.setup + data.delivery;
         }
-        saveJoke();
+        hilariousEl.on('click', function(event) {
+          event.preventDefault();
+          saveJoke();
+        });
       })
     } else {
       console.log("Computer wins");
@@ -68,3 +72,4 @@ centerThemeCard.on('click', function(event) {
 
   });
 });
+
