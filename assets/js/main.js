@@ -26,6 +26,7 @@ var changeUSerSettingsButtonEl = $( '#change-user-settings' );
 var userNameDisplayEl = $( '#user-name' );
 var usernameEntryEl = $( '#username-entry' );
 var nameEntryErrorEl = $( '#name-entry-error' );
+var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
@@ -59,6 +60,7 @@ function initialize () {
 
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
+    themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
 
   }
 
@@ -251,6 +253,8 @@ userModal.on( 'click', 'img', function ( event ) {
   // set theme index to value store in img element
   themeIndex = parseInt( themeSelection.data( 'theme' ) );
   localStorage.setItem( 'deck_theme', themeIndex );
+
+  themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
 
 } );
 

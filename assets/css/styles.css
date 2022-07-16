@@ -103,9 +103,14 @@ nav {
     z-index: 0;
 }
 
-.card-row > img {
+.card-row > img, .small-card {
     height: 3.5rem;
     margin: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.small-card {
+    border: 1px solid #000;
 }
 
 summary {
