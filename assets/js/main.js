@@ -31,6 +31,20 @@ var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
 var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
+var currentJoke;
+var myJokes= [];
+
+// save jokes to local storage
+function saveJoke(){
+  myJokes.push(currentJoke);
+  localStorage.setItem("jokes", JSON.stringify(myJokes));
+}
+
+// load jokes from local storage
+function loadJokesJSON(){
+  var jokesJSON = localStorage.getItem("jokes");
+  myJokes = JSON.parse(jokesJSON);
+}
 
 // initialize modals on all pages where main.js is loaded
 $(document).ready(function(){
@@ -45,6 +59,10 @@ $(document).ready(function () {
 // initialize data
 function initialize () {
 
+  // if there is a joke stored load jokes into joke array
+  if (localStorage.getItem("jokes")){
+    loadJokesJSON();
+  }
   // if there is a user name show welcome element
   if ( userName ) {
 
