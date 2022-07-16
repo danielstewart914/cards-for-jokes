@@ -38,8 +38,8 @@
             <li><a class="white-text" href="index.html"><i class="material-icons left white-text">home</i>Home</a></li>
             <li><a class="white-text" href="highscores.html"><i class="material-icons left white-text">view_list</i>High Scores</a></li>
             <li><a class="white-text" href="myjokes.html"><i class="material-icons left white-text">gamepad</i>My Jokes</a></li>
-            <!-- Temporary Modal Trigger -->
-            <li class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</li>
+            <!-- Temporary Modal Trigger
+            <li class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</li> -->
           </ul>
       </div>
     </nav>
@@ -55,21 +55,24 @@
         <div class="center-align gameTitle">
             <a class="game-card card-back card-overlay z-depth-3 gameBox" id="user-card" href="#">
             </a>
+            <p id="label">User</p>
           </div>
           <div class="center-align gameTile">
             <a class="game-card card-back card-overlay z-depth-3 userDeck" id="center-theme" href="#">
             </a>
+            <p id="label">Deck</p>
           </div>
           <div class="center-align gameTile">
             <a class="game-card card-back card-overlay z-depth-3 gameBox" id="computer-card" href="#">
             </a>
+            <p id="label">Computer</p>
           </div>
       </div>
       <div class="card-row" id="bottomCardRow"></div>
     </main>
 
      <!--Modal Structure-->
-  <div id="modal1" class="modal">
+  <div id="jokeModal" class="modal">
     <div class="modal-content center-align">
       <h6>You Win!</h6>
       <h6>Here is a hilarious joke!</h6>
