@@ -6,7 +6,15 @@ var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
 var userName = localStorage.getItem( 'user_name' );
 var themeIndex =  localStorage.getItem( 'deck_theme' );
 
-const themes = [ 'https://deckofcardsapi.com/static/img/back.png', './assets/images/batman-card-theme.jpeg', './assets/images/awkward-turtle-card-theme.jpg', './assets/images/mountain-card-theme.jpg', './assets/images/humming-bird-card-theme.jpg', '' ];
+const themes = [ 
+  'https://deckofcardsapi.com/static/img/back.png', 
+  './assets/images/batman-deck-theme.jpg', 
+  './assets/images/awkward-turtle-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme.jpg', 
+  './assets/images/humming-bird-deck-theme.jpg', 
+  './assets/images/mountain-deck-theme-2.jpg' 
+
+];
 
 // index.html elements
 var highCardGameEl = $( '#highCardGame' );
