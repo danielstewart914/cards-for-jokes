@@ -30,7 +30,7 @@ var nameEntryErrorEl = $( '#name-entry-error' );
 var themeDisplayEl = $( '#theme-display' );
 
 //  joke variables
-var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming';
+var jokeAPIUrl ='https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&amount=1';
 var currentJoke;
 var myJokes= [];
 

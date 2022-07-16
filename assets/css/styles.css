@@ -161,6 +161,7 @@ summary {
 #jokeBox {
     border: solid black 1px;
     width: 22rem;
+    flex-direction: column;
 }
 
 #bottomCardRow {
