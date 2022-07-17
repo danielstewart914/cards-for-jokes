@@ -36,8 +36,15 @@ var myJokes= [];
 
 // save jokes to local storage
 function saveJoke(){
+
+  // if joke is already saved return out of function
+  var jokeIndex = myJokes.findIndex( jokes => jokes.id === currentJoke.id );
+  if ( jokeIndex >= 0 ) return;
+
+  // push current joke to joke array and save to local storage
   myJokes.push(currentJoke);
   localStorage.setItem("jokes", JSON.stringify(myJokes));
+
 }
 
 // load jokes from local storage
@@ -72,7 +79,7 @@ function initialize () {
   }
 
   if ( themeIndex !== null ) {
-    console.log( 'hello' )
+
     // if there is a them selected add highlight to selected theme card
     userModal.children().children().children( 'img' ).eq( themeIndex ).addClass( 'selected-theme' );
     themeDisplayEl.attr( 'src',  themes[ themeIndex ] );
@@ -102,7 +109,6 @@ function initialize () {
 
 function changeTheme () {
 
-  console.log( themeIndex)
   if ( themeIndex > 0 ) {
 
      documentRootEl.css( '--cardThemeUrl', `url( '../.${ themes[ themeIndex ] }' )` );

@@ -35,13 +35,18 @@ var score = 0;
       score +=10;
       getJoke().then( function(data) {
         if (data.type = 'single' && data.joke) {
-          console.log(data.joke);
+
           jokeBoxEl.html( data.joke );
-          currentJoke = data.joke;
+
+          // save joke as object with type 1 and unique id
+          currentJoke = { type: 1, id: data.id, joke: data.joke };
+
         } else {
-          console.log(data.setup + data.delivery)
+
           jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
-          currentJoke = data.setup + data.delivery;
+
+          // save joke as object with type 2 and unique id
+          currentJoke = { type: 2, id: data.id, setup: data.setup, delivery: data.delivery };
         }
         hilariousEl.on('click', function(event) {
           event.preventDefault();
