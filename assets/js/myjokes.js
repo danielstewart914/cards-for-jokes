@@ -9,7 +9,7 @@ rootEl.append(rowEl);
 for (var iter = 0; iter < myJokes.length; iter++) {
 
     var columnEl = $('<div>');
-    columnEl.attr('class','col s12 m4 l3');
+    columnEl.attr('class','col s12 m6 l4');
     rowEl.append(columnEl);
 
     var cardEl = $('<div>');
