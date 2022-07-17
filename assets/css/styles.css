@@ -48,13 +48,13 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 3rem;
+    padding: 0 3rem;
     width: 100vw;
     margin-top: 150px;
 }
 
 .game-play {
-    margin-top: 90px;
+    margin-top: 110px;
 }
 
 .jokes {
