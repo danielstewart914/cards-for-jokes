@@ -1,8 +1,5 @@
 //Get Jokes from Local Storage
 
-myJokes =  localStorage.getItem('jokes') || "[]";
-myJokes = JSON.parse(myJokes);
-
 var rootEl = $('#joke-container');
 
 var rowEl = $('<div>');
@@ -56,6 +53,7 @@ for (var iter = 0; iter < myJokes.length; iter++) {
     spanRevealEl.append(iconRevealEl);
 
     var jokeContentEl = $('<p>');
-    jokeContentEl.text(myJokes[iter]);
+    if ( myJokes[iter].type === 1 ) jokeContentEl.text(myJokes[iter].joke);
+    if ( myJokes[iter].type === 2 ) jokeContentEl.html( `<p>${ myJokes[iter].setup }</p><p>${ myJokes[iter].delivery }</p>` )
     cardRevealEl.append(jokeContentEl);
 }
