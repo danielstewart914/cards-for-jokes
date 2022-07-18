@@ -254,7 +254,7 @@ summary {
         width: 20vw !important;
     }
     .drawPile {
-        order: -1;
+        order: 1;
         width: 100%;
         display: flex;
         align-items: center;
