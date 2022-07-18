@@ -240,6 +240,16 @@ summary {
     width: 90%;
 }
 
+.game-over {
+    width: fit-content;
+    background-color: #1E5848;
+    margin-left: 45%;
+}
+
+.restart-btn {
+    margin-left: 20%;
+}
+
 @media screen and (min-width: 992px) {
     .deck {
         width: 10%;
