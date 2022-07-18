@@ -48,7 +48,7 @@ var score = 0;
           // save joke as object with type 2 and unique id
           currentJoke = { type: 2, id: data.id, setup: data.setup, delivery: data.delivery };
         }
-        hilariousEl.on('click', function(event) {
+        hilariousEl.off("click").on('click', function(event) {
           event.preventDefault();
           saveJoke();
         });
