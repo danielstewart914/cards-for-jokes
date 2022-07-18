@@ -74,7 +74,7 @@ function endGame(remaining) {
   if (remaining == 0){
     // // TODO: save score to local storage
 
-    document.getElementsByClassName('game-play')[0].style.visibility = 'hidden';
+    $( '.game-play' ).addClass( 'hidden' );
 
     var gameEndDiv = $('#game-end');
     gameEndDiv.attr('class', 'game-over')
@@ -90,7 +90,7 @@ function endGame(remaining) {
     newDiv.append(scorePara);
 
     var restartButton = $('<button>');
-    restartButton.attr('class', 'restart-btn');
+    restartButton.attr('class', 'restart-btn waves-effect waves-light btn brown darken-4 white-text');
     restartButton.text('Restart Game');
     restartButton.on('click', function(event) {
       event.preventDefault();

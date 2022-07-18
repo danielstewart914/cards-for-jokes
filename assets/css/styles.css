@@ -20,6 +20,7 @@ main {
     display: flex;
     flex-direction: column; 
     justify-content: center;
+    align-items: center;
     padding-bottom: 110px;
 }
 
@@ -237,17 +238,16 @@ summary {
     color: white;
     margin: 1rem;
     padding: .5em;
-    width: 90%;
 }
 
 .game-over {
-    width: fit-content;
+    text-align: center;
+    margin-top: 110px;
     background-color: #1E5848;
-    margin-left: 45%;
 }
 
 .restart-btn {
-    margin-left: 20%;
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -279,11 +279,6 @@ summary {
 
     .game-card {
         border-radius: 0.4rem;
-    }
-
-    .label {
-        width: 20vw;
-        font-size: 0.8em;
     }
 
    }
