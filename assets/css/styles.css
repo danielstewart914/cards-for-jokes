@@ -17,10 +17,9 @@ body .modal {
 }
 
 main {
-    height: 300%;
     display: flex;
-    flex: 1;
     flex-direction: column; 
+    justify-content: center;
     padding-bottom: 110px;
 }
 
@@ -43,16 +42,23 @@ nav {
     font-size: 1.5rem;
 }
 
-.games {
+.games, .game-play {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 3rem;
-    height: calc( 100vh - 110px );
+    padding: 0 3rem;
     width: 100vw;
-    margin-top: 0rem;
+    margin-top: 150px;
+}
+
+.game-play {
+    margin-top: 110px;
+}
+
+.jokes {
+    margin-top: 90px;
 }
 
 .game-card {
@@ -226,11 +232,12 @@ summary {
     font-size: 1.2rem;
 
 }
-#label {
+.label {
     background-color: rgba(0, 0, 0, 0.309);
     color: white;
     margin: 1rem;
     padding: .5em;
+    width: 90%;
 }
 
 @media screen and (min-width: 992px) {
@@ -241,13 +248,13 @@ summary {
 
 @media screen and (max-width: 768px) {
    .brand-logo {    
-    font-size: 1.5rem !important;
+        font-size: 1.5rem !important;
     }
     .mobile-card {
         width: 20vw !important;
     }
     .drawPile {
-        order: -1;
+        order: 1;
         width: 100%;
         display: flex;
         align-items: center;
@@ -259,9 +266,16 @@ summary {
         align-items: center;
         flex-direction: column;
     }
-    .games {
-        justify-content: center;
+
+    .game-card {
+        border-radius: 0.4rem;
     }
+
+    .label {
+        width: 20vw;
+        font-size: 0.8em;
+    }
+
    }
 
  
