@@ -6,7 +6,7 @@ var jokeModal = $( '#jokeModal' );
 var jokeBoxEl = $( '#jokeBox' )
 var score = 0;
 
-  function determineWinner(user_val, comp_val) {
+  function determineWinner(user_val, comp_val, remaining) {
 
     var cards_value = {
       'KING' : 13,
@@ -28,6 +28,7 @@ var score = 0;
   
     if(user_val == comp_val){
       console.log("Nobody Wins");
+      endGame(remaining);
     } else if(user_val > comp_val ) {
       console.log("User Wins");
       jokeBoxEl.html('');
@@ -52,9 +53,13 @@ var score = 0;
           event.preventDefault();
           saveJoke();
         });
-      })
+      }).then(function() {
+        console.log("Check remaining " + remaining);
+        endGame(remaining);
+      });
     } else {
       console.log("Computer wins");
+      endGame(remaining);
     }
   }
 
@@ -65,16 +70,39 @@ centerThemeCard.on('click', function(event) {
     computerCardEl.css('background-image', 'url('+ data.cards[1].image+')');
   
     // Determine who is the winner
-    determineWinner(data.cards[0].value,data.cards[1].value);
-    if (data.remaining == 0) {
-      // TODO: save score to local storage
-
-      // end game - can be changed to a modal later.
-      alert("Your score is: " + score);
-      // Go to highscore page
-      window.location = 'highscores.html';
-    }
-
+    determineWinner(data.cards[0].value,data.cards[1].value, data.remaining);
   });
 });
+
+function endGame(remaining) {
+  if (remaining == 0){
+    // // TODO: save score to local storage
+
+    document.getElementsByClassName('game-play')[0].style.visibility = 'hidden';
+
+    var gameEndDiv = $('#game-end');
+    gameEndDiv.attr('class', 'game-over')
+    var newDiv = $('<div>');
+    var newPara = $('<p>');
+    newPara.attr('class', 'label center-align')
+    newPara.text('Game Over');
+    newDiv.append(newPara);
+
+    var scorePara = $('<p>');
+    scorePara.attr('class', 'label center-align')
+    scorePara.text('Your score is: ' +score);
+    newDiv.append(scorePara);
+
+    var restartButton = $('<button>');
+    restartButton.attr('class', 'restart-btn');
+    restartButton.text('Restart Game');
+    restartButton.on('click', function(event) {
+      event.preventDefault();
+      location.reload();
+    });
+    newDiv.append(restartButton);
+
+    gameEndDiv.append(newDiv);
+  }
+}
 
