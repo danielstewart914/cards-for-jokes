@@ -4,7 +4,6 @@
 ## Description
 ### A Fun Game of Cards<br>
 
-<!-- full description here -->
 
 ## Table of Contents
 
@@ -15,7 +14,16 @@
 
 ## Usage
 
-<!-- usage instructions here -->
+* Click on the card game to begin.
+* Enter your name and select card deck theme.
+* Click 'Play Game' to start the game.
+* Click on the deck card to deal the cards.
+* If you win, a joke will be shown.
+* If the computer wins or tie game, continue playing.
+* The game is over when all of the cards in the deck have been drawn.
+* Click on 'High Scores' to view your high scores
+* Click on 'My Jokes' to view your jokes
+
 
 ## Contributors
 - [Casey Robison](https://github.com/mrcaseyrobison)
