@@ -2,8 +2,13 @@
 ## Deployed Application
 [Deployed Application](https://danielstewart914.github.io/cards-for-jokes/)
 ## Description
-### A Fun Game of Cards<br>
+### A Funny Game of Cards<br>
 
+Cards for Jokes is a simple card game in which a player plays to win hilarious jokes. The player can input their name and personalize their game by choosing from a selection of card themes. When the player wins a round they will be shown a funny programming joke. After the game, the player can view high scores and saved jokes. 
+
+"High Card Wins" is the current available game to play, however, future developments will include other games. 
+
+This game was developed using two fun, openly available API’s ([Deck of Cards API](https://deckofcardsapi.com/) and [Jokes API](https://sv443.net/jokeapi/v2/)) for the purposes of entertainment. 
 
 ## Table of Contents
 
