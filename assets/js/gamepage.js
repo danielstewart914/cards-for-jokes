@@ -27,10 +27,8 @@ var score = 0;
     comp_val = parseInt(comp_val);
   
     if(user_val == comp_val){
-      console.log("Nobody Wins");
       endGame(remaining);
     } else if(user_val > comp_val ) {
-      console.log("User Wins");
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
       score +=10;
@@ -54,11 +52,9 @@ var score = 0;
           saveJoke();
         });
       }).then(function() {
-        console.log("Check remaining " + remaining);
         endGame(remaining);
       });
     } else {
-      console.log("Computer wins");
       endGame(remaining);
     }
   }
@@ -105,4 +101,3 @@ function endGame(remaining) {
     gameEndDiv.append(newDiv);
   }
 }
-
