@@ -31,7 +31,7 @@ var score = 0;
     } else if(user_val > comp_val ) {
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
-      score +=10;
+      score +=user_val;
       getJoke().then( function(data) {
         if (data.type = 'single' && data.joke) {
 
