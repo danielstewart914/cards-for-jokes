@@ -220,7 +220,7 @@ function saveUserName() {
 
   if ( usernameEntryEl.val() ) userName = usernameEntryEl.val();
 
-  if ( themeIndex === undefined ) {
+  if ( themeIndex >= 0 ) {
     
     themeIndex = 6;
     localStorage.setItem( 'deck_theme', themeIndex );
