@@ -121,6 +121,13 @@ nav {
     border: 1px solid #000;
 }
 
+.delete-joke {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+}
+
 summary {
     border: black solid 1px;
     opacity: 0.9;
