@@ -233,20 +233,6 @@ function saveUserName() {
 
 initialize();
 
-// HighScores
-// store to local storage.
-// var highScoresListE1 = document.querySelector("#high-scores");
-
-// var savedName = document.getElementById("username").value
-var highScores;
-
-function saveHighScores(){
-  // dummy entries for testing
-  highScores =[{name: "Mike", score: 10}, {name: "john", score: 20}];
-  localStorage.setItem('highScores', JSON.stringify(highScores))
-}
- 
-saveHighScores()
 
 highCardGameEl.on( 'click', function( event ) {
 

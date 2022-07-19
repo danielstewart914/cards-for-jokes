@@ -31,7 +31,7 @@ var score = 0;
     } else if(user_val > comp_val ) {
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
-      score +=user_val;
+      localStorage.setItem("score", JSON.stringify(score +=user_val));
       getJoke().then( function(data) {
         if (data.type = 'single' && data.joke) {
 
@@ -70,9 +70,25 @@ centerThemeCard.on('click', function(event) {
   });
 });
 
-function endGame(remaining) {
+function saveHighScores() {
+  // store multiple objects in an array, this will help with storing all of your highscore objects together
+  var username = localStorage.getItem("user_name");
+  var score = localStorage.getItem("score");
+
+  var highscore = {
+    username: username,
+    score: score
+  }
+  localStorage.setItem("userScores", JSON.stringify(highscore))
+
+  // render all previously saved highscores to the highscore page (put this in highscores.js)
+    // parse the userScores data from localStorage, map function to go through each object in LS and create a table line for each username/score combo
+  }
+  
+  function endGame(remaining) {
+  // save new highscore object to localStorage at the end of each game
+  saveHighScores()
   if (remaining == 0){
-    // // TODO: save score to local storage
 
     $( '.game-play' ).addClass( 'hidden' );
 
@@ -89,6 +105,10 @@ function endGame(remaining) {
     scorePara.text('Your score is: ' +score);
     newDiv.append(scorePara);
 
+    var gameEndMessage = $('<p>').text("Visit the High Scores page to view your score!");
+    gameEndMessage.attr("class", "label center-align")
+    newDiv.append(gameEndMessage);
+
     var restartButton = $('<button>');
     restartButton.attr('class', 'restart-btn waves-effect waves-light btn brown darken-4 white-text');
     restartButton.text('Restart Game');
@@ -99,5 +119,8 @@ function endGame(remaining) {
     newDiv.append(restartButton);
 
     gameEndDiv.append(newDiv);
+
   }
 }
+
+
