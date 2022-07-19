@@ -4,7 +4,7 @@
 ## Description
 ### A Funny Game of Cards<br>
 
-Cards for Jokes is a simple card game in which a player plays against the computer to win hilarious jokes. The player can input their name and personalize their game by choosing from a selection of card themes. When the player wins a round they will be shown a funny programming joke. The player will receive one point for every round they win. After the game, the player can view high scores and saved jokes. 
+Cards for Jokes is a simple card game in which a player plays against the computer to win hilarious jokes. The player can input their name and personalize their game by choosing from a selection of card themes. When the player wins a round they will be shown a funny programming joke. The player will receive a point based on the value of the winning card for every round they win. After the game, the player can view high scores and saved jokes. 
 
 "High Card Wins" is the current available game to play, however, future developments will include other games. 
 
