@@ -4,7 +4,6 @@ var computerCardEl = $('#computer-card');
 var hilariousEl = $('#hilarious')
 var jokeModal = $( '#jokeModal' );
 var jokeBoxEl = $( '#jokeBox' );
-var noWinEl = $( '#noWin' );
 var score = 0;
 
   function determineWinner(user_val, comp_val, remaining) {
@@ -53,7 +52,6 @@ var score = 0;
           saveJoke();
         });
       }).then(function() {
-        noWinEl.text('Computer Wins');
         endGame(remaining);
       });
     } else {
