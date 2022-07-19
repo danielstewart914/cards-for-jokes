@@ -24,6 +24,7 @@ This game was developed using two fun, openly available API’s ([Deck of Cards 
 * Click 'Play Game' to start the game.
 * Click on the deck card to deal the cards.
 * If you win, a joke will be shown.
+* The player will be given the option to save the joke or not.
 * If the computer wins or tie game, continue playing.
 * The game is over when all of the cards in the deck have been drawn.
 * Click on 'High Scores' to view your high scores
