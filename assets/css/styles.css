@@ -162,9 +162,14 @@ summary {
     display: flex;
     border: black solid 1px;
     opacity: 0.7;
-    align-content: center;
-    justify-content: center;
     margin: 1rem;
+}
+
+#rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10%;
 }
 
 #myJokes {
@@ -204,9 +209,7 @@ summary {
 }
 
 .selected-theme {
-
     border: 0.5rem solid #ff6d00;
-
 }
 
 .welcome {
@@ -241,10 +244,11 @@ summary {
 
 }
 .label {
-    background-color: rgba(0, 0, 0, 0.309);
     color: white;
+    opacity: 0.6;
     margin: 1rem;
     padding: .5em;
+    border: 1px solid black;
 }
 
 .game-over {
@@ -258,6 +262,8 @@ summary {
 }
 
 #lose-tie {
+    width: 30vw;
+    height: 10vh;
     display: flex;
     border: black solid 1px;
     opacity: 0.6;
@@ -271,6 +277,54 @@ summary {
     .deck {
         width: 10%;
     }
+
+    #lose-tie {
+        width: 38.2vw;
+        height: 10vh;
+        display: flex;
+        border: black solid 1px;
+        opacity: 0.6;
+        padding: .7rem;
+        align-content: center;
+        justify-content: center;
+        margin: 1rem;
+   }
+}
+
+@media screen and (max-width: 1180px) {
+    .deck {
+        width: 10%;
+    }
+
+    #lose-tie {
+        width: 60vw;
+        height: 10vh;
+        display: flex;
+        border: black solid 1px;
+        opacity: 0.6;
+        padding: .7rem;
+        align-content: center;
+        justify-content: center;
+        margin: 1rem;
+   }
+}
+
+@media screen and (max-width: 820px) {
+    .deck {
+        width: 10%;
+    }
+
+    #lose-tie {
+        width: 84vw;
+        height: 10vh;
+        display: flex;
+        border: black solid 1px;
+        opacity: 0.6;
+        padding: .7rem;
+        align-content: center;
+        justify-content: center;
+        margin: 1rem;
+   }
 }
 
 @media screen and (max-width: 768px) {
@@ -298,7 +352,18 @@ summary {
         border-radius: 0.4rem;
     }
 
+    #lose-tie {
+        width: 100vw;
+        height: 60px;
+        display: flex;
+        border: black solid 1px;
+        opacity: 0.6;
+        padding: .7rem;
+        align-content: center;
+        justify-content: center;
+        margin: 1rem;
    }
+}
 
  
 
