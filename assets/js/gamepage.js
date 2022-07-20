@@ -7,62 +7,70 @@ var jokeBoxEl = $( '#jokeBox' );
 var loseTieEl = $( '#lose-tie' );
 var score = 0;
 
-  function determineWinner(user_val, comp_val, remaining) {
+/*
+Determine the winner based on the card value of user and computer
+*/
+function determineWinner(user_val, comp_val, remaining) {
 
-    var cards_value = {
-      'KING' : 13,
-      'QUEEN' : 12,
-      'JACK' : 11,
-      'ACE' : 0
-    };
+  // Value assigned for non number value cards
+  var cards_value = {
+    'KING' : 13,
+    'QUEEN' : 12,
+    'JACK' : 11,
+    'ACE' : 0
+  };
   
-    if (cards_value[user_val] !== undefined){
-      user_val = cards_value[user_val];
-    }
-  
-    if (cards_value[comp_val] !== undefined){
-      comp_val = cards_value[comp_val];
-    }
-  
-    user_val = parseInt(user_val);
-    comp_val = parseInt(comp_val);
-  
-    if(user_val == comp_val){
-      loseTieEl.html( 'It\'s a tie!<br>Nobody wins.<br>Click deck to draw another card' );
-      endGame(remaining);
-    } else if(user_val > comp_val ) {
-      loseTieEl.text( 'Click deck to draw a card' );
-      jokeBoxEl.html('');
-      jokeModal.modal( 'open' );
-      score +=user_val;
-      getJoke().then( function(data) {
-        if (data.type = 'single' && data.joke) {
-
-          jokeBoxEl.html( data.joke );
-
-          // save joke as object with type 1 and unique id
-          currentJoke = { type: 1, id: data.id, joke: data.joke };
-
-        } else {
-
-          jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
-
-          // save joke as object with type 2 and unique id
-          currentJoke = { type: 2, id: data.id, setup: data.setup, delivery: data.delivery };
-        }
-        hilariousEl.off("click").on('click', function(event) {
-          event.preventDefault();
-          saveJoke();
-        });
-      }).then(function() {
-        endGame(remaining);
-      });
-    } else {
-      loseTieEl.html( 'Computer Wins!<br>Click deck to try again' );
-      endGame(remaining);
-    }
+  if (cards_value[user_val] !== undefined){
+    user_val = cards_value[user_val];
   }
+  
+  if (cards_value[comp_val] !== undefined){
+    comp_val = cards_value[comp_val];
+  }
+  
+  user_val = parseInt(user_val);
+  comp_val = parseInt(comp_val);
+  
+  // Compare the card values
+  if(user_val == comp_val){
+    loseTieEl.html( 'It\'s a tie!<br>Nobody wins.<br>Click deck to draw another card' );
+    endGame(remaining);
+  } else if(user_val > comp_val ) {
+    loseTieEl.text( 'Click deck to draw a card' );
+    // Opens the joke modal
+    jokeBoxEl.html('');
+    jokeModal.modal( 'open' );
+    score +=user_val;
+    getJoke().then( function(data) {
+      if (data.type = 'single' && data.joke) {
 
+        jokeBoxEl.html( data.joke );
+
+        // save joke as object with type 1 and unique id
+        currentJoke = { type: 1, id: data.id, joke: data.joke };
+
+      } else {
+
+        jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
+
+        // save joke as object with type 2 and unique id
+        currentJoke = { type: 2, id: data.id, setup: data.setup, delivery: data.delivery };
+      }
+      // To prevent previous initializations of the same button
+      hilariousEl.off("click").on('click', function(event) {
+        event.preventDefault();
+        saveJoke();
+      });
+    }).then(function() {
+      endGame(remaining);
+    });
+  } else {
+    loseTieEl.html( 'Computer Wins!<br>Click deck to try again' );
+    endGame(remaining);
+  }
+}
+
+// When the center deck is clicked, two cards are drawn and winner is determined
 centerThemeCard.on('click', function(event) {
   event.preventDefault();
   drawCard(2).then(function(data) {
@@ -100,6 +108,7 @@ function endGame(remaining) {
     $( '.game-play' ).addClass( 'hidden' );
     loseTieEl.addClass( 'hidden' );
 
+    // To display game over
     var gameEndDiv = $('#game-end');
     gameEndDiv.attr('class', 'game-over')
     var newDiv = $('<div>');
@@ -108,15 +117,18 @@ function endGame(remaining) {
     newPara.text('Game Over');
     newDiv.append(newPara);
 
+    // To display the score
     var scorePara = $('<p>');
     scorePara.attr('class', 'label center-align')
     scorePara.text('Your score is: ' +score);
     newDiv.append(scorePara);
 
+    // To view the high scores page
     var gameEndMessage = $('<p>').text("Visit the High Scores page to view your score!");
     gameEndMessage.attr("class", "label center-align")
     newDiv.append(gameEndMessage);
 
+    // To play the game again
     var restartButton = $('<button>');
     restartButton.attr('class', 'restart-btn waves-effect waves-light btn brown darken-4 white-text');
     restartButton.text('Restart Game');

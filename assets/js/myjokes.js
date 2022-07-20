@@ -1,7 +1,11 @@
 var rootEl = $('#joke-container');
 
+/*
+Render jokes from local storage in a grid layout
+*/
 function renderJokes() {
 
+    // Create a row in the grid layout to display jokes
     var jokesFrag = $( document.createDocumentFragment() );
     var rowEl = $('<div>');
     rowEl.attr('class','row');
@@ -9,10 +13,12 @@ function renderJokes() {
 
     for (var iter = 0; iter < myJokes.length; iter++) {
 
+        // Create a column in a grid for each joke
         var columnEl = $('<div>');
         columnEl.attr('class','col s12 m6 l4');
         rowEl.append(columnEl);
 
+        // Card element from materialize
         var cardEl = $('<div>');
         cardEl.attr('class', 'card');
         cardEl.attr('id', 'joke-box');
@@ -22,11 +28,13 @@ function renderJokes() {
         cardImageEl.attr('class' , 'card-image waves-effect waves-block waves-light');
         cardEl.append(cardImageEl);
 
+        // Add image to the card which when clicked opens the joke
         var imageEl = $('<img>');
         imageEl.attr ('class', 'activator');
         imageEl.attr ('src' , './assets/images/binary.jpeg');
         cardImageEl.append(imageEl);
 
+        // Add content to the card
         var cardContentEl = $('<div>');
         cardContentEl.attr('class' , 'card-content');
         cardEl.append(cardContentEl);
@@ -40,6 +48,7 @@ function renderJokes() {
         iconEl.text('more_vert');
         spanEl.append(iconEl);
 
+        // To reveal the contents of the joke
         var cardRevealEl = $('<div>');
         cardRevealEl.attr('class' , 'card-reveal');
         cardEl.append(cardRevealEl);
