@@ -257,16 +257,6 @@ summary {
     margin-bottom: 1rem;
 }
 
-#lose-tie {
-    display: flex;
-    border: black solid 1px;
-    opacity: 0.6;
-    padding: .7rem;
-    align-content: center;
-    justify-content: center;
-    margin: 1rem;
-}
-
 @media screen and (min-width: 992px) {
     .deck {
         width: 10%;

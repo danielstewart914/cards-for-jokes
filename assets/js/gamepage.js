@@ -32,10 +32,10 @@ function determineWinner(user_val, comp_val, remaining) {
   
   // Compare the card values
   if(user_val == comp_val){
-    loseTieEl.html( 'It\'s a tie!<br>Nobody wins.<br>Click deck to draw another card' );
+    loseTieEl.html( 'It\'s a tie!<br>Click the deck to draw another card' );
     endGame(remaining);
   } else if(user_val > comp_val ) {
-    loseTieEl.text( 'Click deck to draw a card' );
+    loseTieEl.text( 'Click the deck to draw a card' );
     // Opens the joke modal
     jokeBoxEl.html('');
     jokeModal.modal( 'open' );
@@ -64,7 +64,7 @@ function determineWinner(user_val, comp_val, remaining) {
       endGame(remaining);
     });
   } else {
-    loseTieEl.html( 'Computer Wins!<br>Click deck to try again' );
+    loseTieEl.html( 'Computer Wins!<br>Click your deck to try again' );
     endGame(remaining);
   }
 }
