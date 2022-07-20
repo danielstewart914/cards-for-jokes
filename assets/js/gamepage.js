@@ -70,23 +70,26 @@ centerThemeCard.on('click', function(event) {
   });
 });
 
-function endGame(remaining) {
-
-function finalScore(name, score){
-  var scoreBoard =[];
-
-  var board = {
+function finalScore(){
+  //variable to grab previous username and score from local storage and if no previous data, empty array
+  var previousScores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
+  // username value to save to new object
+  var user_name = localStorage.getItem("user_name")
+  // new score object to save current game data
+  var newScore = {
     name: user_name,
     score: score,
   };
-  scoreBoard.push(board);
-  scoreBoard = scoreBoard.concat(JSON.parse(localStorage.getItem("scoreBoard")||[]));
-  
-  localStorage.setItem("finalScore", JSON.stringify(finalScore));
+// push new score object to previous score array
+  previousScores.push(newScore);
+
+  localStorage.setItem("scoreBoard", JSON.stringify(previousScores));
 };
 
+function endGame(remaining) {
 
   if (remaining == 0){
+    finalScore()
 
     $( '.game-play' ).addClass( 'hidden' );
 
