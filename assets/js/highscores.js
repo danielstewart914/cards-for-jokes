@@ -1,21 +1,18 @@
-if (localStorage.getItem("highScores")){
+if (localStorage.getItem("scoreBoard")){
 
-  var highScores = JSON.parse(localStorage.getItem("highScores"));
+  var highScores = JSON.parse(localStorage.getItem("scoreBoard"));
   console.log(highScores)
 
-  for(var i=0; i<highScores.length; i++){
-
-      document.getElementById('highScores').innerHTML+=
-      `
-        <tbody>
-          <tr>
-            <td>${i+1}</td>
-            <td>${highScores[i].name}</td>
-            <td>${highScores[i].score}</td>
-          </tr>
-        </tbody>
-      `
-
-  }
-
+  highScores.map(({name,score})=>{
+    console.log(name,score)
+  document.getElementById("highScores").innerHTML+=
+  `
+  <tbody>
+    <tr>
+      <td>${name}</td>
+      <td>${score}</td>
+    </tr>
+  </tbody>
+  `
+  })
 }

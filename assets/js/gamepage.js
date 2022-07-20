@@ -70,9 +70,28 @@ centerThemeCard.on('click', function(event) {
   });
 });
 
+function finalScore(){
+// score moved to save in LS at finalscore function
+  localStorage.setItem("score", JSON.stringify(score));
+  //variable to grab previous username and score from local storage and if no previous data, empty array
+  var previousScores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
+  // username value to save to new object
+  var user_name = localStorage.getItem("user_name")
+  // new score object to save current game data
+  var newScore = {
+    name: user_name,
+    score: score,
+  };
+// push new score object to previous score array
+  previousScores.push(newScore);
+
+  localStorage.setItem("scoreBoard", JSON.stringify(previousScores));
+};
+
 function endGame(remaining) {
+
   if (remaining == 0){
-    // // TODO: save score to local storage
+    finalScore()
 
     $( '.game-play' ).addClass( 'hidden' );
 
@@ -89,6 +108,10 @@ function endGame(remaining) {
     scorePara.text('Your score is: ' +score);
     newDiv.append(scorePara);
 
+    var gameEndMessage = $('<p>').text("Visit the High Scores page to view your score!");
+    gameEndMessage.attr("class", "label center-align")
+    newDiv.append(gameEndMessage);
+
     var restartButton = $('<button>');
     restartButton.attr('class', 'restart-btn waves-effect waves-light btn brown darken-4 white-text');
     restartButton.text('Restart Game');
@@ -99,5 +122,8 @@ function endGame(remaining) {
     newDiv.append(restartButton);
 
     gameEndDiv.append(newDiv);
+
   }
 }
+
+
