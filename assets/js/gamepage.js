@@ -31,7 +31,7 @@ var score = 0;
     } else if(user_val > comp_val ) {
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
-      localStorage.setItem("score", JSON.stringify(score +=user_val));
+      score +=user_val;
       getJoke().then( function(data) {
         if (data.type = 'single' && data.joke) {
 
@@ -71,6 +71,8 @@ centerThemeCard.on('click', function(event) {
 });
 
 function finalScore(){
+// score moved to save in LS at finalscore function
+  localStorage.setItem("score", JSON.stringify(score));
   //variable to grab previous username and score from local storage and if no previous data, empty array
   var previousScores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
   // username value to save to new object
