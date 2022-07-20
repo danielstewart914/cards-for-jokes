@@ -19,3 +19,8 @@ if (localStorage.getItem("userScores")){
   }
 
 }
+
+var highscore = [
+
+  {name: user_name, score: score}
+]

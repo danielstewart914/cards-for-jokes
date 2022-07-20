@@ -70,24 +70,22 @@ centerThemeCard.on('click', function(event) {
   });
 });
 
-function saveHighScores() {
-  // store multiple objects in an array, this will help with storing all of your highscore objects together
-  var username = localStorage.getItem("user_name");
-  var score = localStorage.getItem("score");
+function endGame(remaining) {
 
-  var highscore = {
-    username: username,
-    score: score
-  }
-  localStorage.setItem("userScores", JSON.stringify(highscore))
+function finalScore(name, score){
+  var scoreBoard =[];
 
-  // render all previously saved highscores to the highscore page (put this in highscores.js)
-    // parse the userScores data from localStorage, map function to go through each object in LS and create a table line for each username/score combo
-  }
+  var board = {
+    name: user_name,
+    score: score,
+  };
+  scoreBoard.push(board);
+  scoreBoard = scoreBoard.concat(JSON.parse(localStorage.getItem("scoreBoard")||[]));
   
-  function endGame(remaining) {
-  // save new highscore object to localStorage at the end of each game
-  saveHighScores()
+  localStorage.setItem("finalScore", JSON.stringify(finalScore));
+};
+
+
   if (remaining == 0){
 
     $( '.game-play' ).addClass( 'hidden' );
