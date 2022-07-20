@@ -13,7 +13,7 @@ var score = 0;
       'KING' : 13,
       'QUEEN' : 12,
       'JACK' : 11,
-      'ACE' : 0
+      'ACE' : 1
     };
   
     if (cards_value[user_val] !== undefined){
@@ -28,10 +28,10 @@ var score = 0;
     comp_val = parseInt(comp_val);
   
     if(user_val == comp_val){
-      loseTieEl.html( 'It\'s a tie!<br>Nobody wins.<br>Click deck to draw another card' );
+      loseTieEl.html( 'It\'s a tie!<br>Click the deck to keep playing' );
       endGame(remaining);
     } else if(user_val > comp_val ) {
-      loseTieEl.text( 'Click deck to draw a card' );
+      loseTieEl.text( 'Click the deck to draw a card' );
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
       score +=user_val;
@@ -58,7 +58,7 @@ var score = 0;
         endGame(remaining);
       });
     } else {
-      loseTieEl.html( 'Computer Wins!<br>Click deck to try again' );
+      loseTieEl.html( 'Computer Wins!<br>Click the deck to keep playing' );
       endGame(remaining);
     }
   }
@@ -75,7 +75,7 @@ centerThemeCard.on('click', function(event) {
 });
 
 function finalScore(){
-// score moved to save in LS at finalscore function
+// score moved to save in LS at final score function
   localStorage.setItem("score", JSON.stringify(score));
   //variable to grab previous username and score from local storage and if no previous data, empty array
   var previousScores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
