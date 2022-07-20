@@ -4,6 +4,7 @@ var computerCardEl = $('#computer-card');
 var hilariousEl = $('#hilarious')
 var jokeModal = $( '#jokeModal' );
 var jokeBoxEl = $( '#jokeBox' );
+var loseTieEl = $( '#lose-tie' );
 var score = 0;
 
   function determineWinner(user_val, comp_val, remaining) {
@@ -27,8 +28,10 @@ var score = 0;
     comp_val = parseInt(comp_val);
   
     if(user_val == comp_val){
+      loseTieEl.html( 'It\'s a tie!<br>Nobody wins.<br>Click deck to draw another card' );
       endGame(remaining);
     } else if(user_val > comp_val ) {
+      loseTieEl.text( 'Click deck to draw a card' );
       jokeBoxEl.html('');
       jokeModal.modal( 'open' );
       score +=user_val;
@@ -55,6 +58,7 @@ var score = 0;
         endGame(remaining);
       });
     } else {
+      loseTieEl.html( 'Computer Wins!<br>Click deck to try again' );
       endGame(remaining);
     }
   }
@@ -94,6 +98,7 @@ function endGame(remaining) {
     finalScore()
 
     $( '.game-play' ).addClass( 'hidden' );
+    loseTieEl.addClass( 'hidden' );
 
     var gameEndDiv = $('#game-end');
     gameEndDiv.attr('class', 'game-over')
