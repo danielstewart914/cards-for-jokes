@@ -7,9 +7,8 @@ var jokeBoxEl = $( '#jokeBox' );
 var loseTieEl = $( '#lose-tie' );
 var score = 0;
 
-/*
-Determine the winner based on the card value of user and computer
-*/
+/* Determine the winner based on the card value of user and computer */
+
 function determineWinner(user_val, comp_val, remaining) {
 
   // Value assigned for non number value cards
@@ -19,6 +18,14 @@ function determineWinner(user_val, comp_val, remaining) {
     'JACK' : 11,
     'ACE' : 0
   };
+  function determineWinner(user_val, comp_val, remaining) {
+
+    var cards_value = {
+      'KING' : 13,
+      'QUEEN' : 12,
+      'JACK' : 11,
+      'ACE' : 1
+    };
   
   if (cards_value[user_val] !== undefined){
     user_val = cards_value[user_val];
@@ -62,6 +69,40 @@ function determineWinner(user_val, comp_val, remaining) {
         saveJoke();
       });
     }).then(function() {
+
+    if(user_val == comp_val){
+      loseTieEl.html( 'It\'s a tie!<br>Click the deck to keep playing' );
+      endGame(remaining);
+    } else if(user_val > comp_val ) {
+      loseTieEl.text( 'Click the deck to draw a card' );
+      jokeBoxEl.html('');
+      jokeModal.modal( 'open' );
+      score +=user_val;
+      getJoke().then( function(data) {
+        if (data.type = 'single' && data.joke) {
+
+          jokeBoxEl.html( data.joke );
+
+          // save joke as object with type 1 and unique id
+          currentJoke = { type: 1, id: data.id, joke: data.joke };
+
+        } else {
+
+          jokeBoxEl.html( `<p>${data.setup}</p><p>${data.delivery}</p>` );
+
+          // save joke as object with type 2 and unique id
+          currentJoke = { type: 2, id: data.id, setup: data.setup, delivery: data.delivery };
+        }
+        hilariousEl.off("click").on('click', function(event) {
+          event.preventDefault();
+          saveJoke();
+        });
+      }).then(function() {
+        endGame(remaining);
+      });
+    } else {
+      loseTieEl.html( 'Computer Wins!<br>Click the deck to keep playing' );
+
       endGame(remaining);
     });
   } else {
@@ -83,7 +124,7 @@ centerThemeCard.on('click', function(event) {
 });
 
 function finalScore(){
-// score moved to save in LS at finalscore function
+// score moved to save in LS at final score function
   localStorage.setItem("score", JSON.stringify(score));
   //variable to grab previous username and score from local storage and if no previous data, empty array
   var previousScores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
