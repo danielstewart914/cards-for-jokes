@@ -40,8 +40,7 @@ This game was developed using two fun, openly available API’s ([Deck of Cards 
 
 ### Preview image
 
-<!-- Daniel will add a preview image once we have a final design -->
-![Application Preview Image](./assets/images/application-preview.png)
+![Application Preview Image](/assets/images/readme.gif)
 
 ## License
 
