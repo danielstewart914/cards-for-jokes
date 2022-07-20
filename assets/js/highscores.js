@@ -10,10 +10,7 @@ $( '#clear-scores' ).on( 'click', function() {
 if (localStorage.getItem("scoreBoard")){
 
   var highScores = JSON.parse(localStorage.getItem("scoreBoard"));
-  console.log(highScores)
-
   highScores.map(({name,score})=>{
-    console.log(name,score)
   document.getElementById("highScores").innerHTML+=
   `
   <tbody>
