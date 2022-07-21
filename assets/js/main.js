@@ -1,6 +1,6 @@
 var bottomCardRowEl = $( '#bottomCardRow' );
 var deckOfCardApiRootUrl = 'https://deckofcardsapi.com/api/deck';
-var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) );
+var deckId = JSON.parse( localStorage.getItem( 'deck_id' ) ) || {};
 var documentRootEl = $( ':root' );
 
 // user settings
@@ -63,6 +63,19 @@ $(document).ready(function () {
   $(".sidenav").sidenav();
 });
 
+// returns true if time stamp is older than two weeks
+function isTimeStampOlderThanTwoWeeks ( timeStamp, now) {
+  
+  // get the difference between timestamp and now
+  var difference = now.diff( luxon.DateTime.fromISO( timeStamp ) );
+
+  // if the timestamp is older than two weeks get a new on
+  if( difference.as( 'weeks' ) > 2 ) return true;
+
+  return false;
+
+}
+
 // initialize data
 function initialize () {
 
@@ -87,23 +100,32 @@ function initialize () {
 
   }
 
-  if( !deckId ) {
+  // if deckId is old format or older than two weeks get new deck_id
+  if ( !deckId.id || isTimeStampOlderThanTwoWeeks( deckId.timeStamp , luxon.DateTime.now() ) ) {
 
     getNewDeck( 1 )
     .then ( function (  data ) {
 
-      deckId = data.deck_id;
+      const newId = data.deck_id;
+      const timeStamp = luxon.DateTime.now();
+
+      deckId = {
+        id: newId,
+        timeStamp: timeStamp
+
+      }
+
       localStorage.setItem( 'deck_id', JSON.stringify( deckId ) );
 
       renderBottomRow();
 
-    } );
+      } );
 
-  } else {
+      } else {
 
-    renderBottomRow();
+      renderBottomRow();
 
-  }
+      }
 
 }
 
@@ -170,7 +192,7 @@ async function shuffleDeck ( id, onlyRemaining ) {
 // draw card(s) 
 async function drawCard( numberOfCards ) {
 
-  const response = await fetch( `${ deckOfCardApiRootUrl }/${ deckId }/draw/?count=${ numberOfCards }` );
+  const response = await fetch( `${ deckOfCardApiRootUrl }/${ deckId.id }/draw/?count=${ numberOfCards }` );
 
   if ( response.ok ) {
 
@@ -188,7 +210,7 @@ async function drawCard( numberOfCards ) {
 function renderBottomRow () {
 
   // first shuffle deck
-  shuffleDeck( deckId, false )
+  shuffleDeck( deckId.id, false )
     .then ( function () {
 
     // draw all cards
@@ -209,7 +231,7 @@ function renderBottomRow () {
       bottomCardRowEl.html( rowFrag );
 
     } ).then( function() {
-      shuffleDeck(deckId, false);
+      shuffleDeck(deckId.id, false);
     })
 
   } );
